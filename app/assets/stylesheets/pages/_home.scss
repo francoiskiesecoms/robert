@@ -1,1 +1,119 @@
-// Specific CSS for your home-page
+.navbar-homepage {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background-color: transparent;
+  transition: all 0.5s background-color ease;
+  height: 70px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-homepage-blue {
+  background-color: #0074D9;
+}
+.navbar-homepage-brand img {
+  height: 50px;
+}
+.navbar-homepage-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-homepage-item {
+  cursor: pointer;
+  padding: 0 20px;
+}
+.navbar-homepage-link {
+  color: #616668;
+  font-size: 14px;
+}
+.navbar-homepage-link:hover {
+  color: #da552f;
+  text-decoration: none;
+}
+
+.banner-homepage {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-homepage-content h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner-homepage-content p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+.apply-now {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+  align-item: center;
+}
+.apply-now:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  padding: 30px;
+}
+.card-added-value {
+  display: block;
+  padding: 50px;
+  text-align: center;
+  margin: 5px;
+}
+.card-added-value i{
+  display: block;
+  color: #0074D9;
+}
+.card-added-value h3 {
+  color: #0074D9;
+}
+.card-added-value p {
+  color: #868484;
+}
+#background-carousel{
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+.carousel,
+.carousel-inner {
+  width:100%;
+  height:100%;
+  z-index:0;
+  overflow:hidden;
+}
+.item {
+  width:100%;
+  height:100%;
+  background-position:center center;
+  background-size:cover;
+  z-index:0;
+}
+.carousel-caption {
+  color: white;
+  z-index: 3 !important;
+  bottom: 200px;
+}
+

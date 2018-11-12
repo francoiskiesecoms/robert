@@ -10,10 +10,79 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_134045) do
+ActiveRecord::Schema.define(version: 2018_11_12_162148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_availabilities_on_student_id"
+  end
+
+  create_table "facilities", force: :cascade do |t|
+    t.string "address"
+    t.string "description"
+    t.bigint "user_id"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_facilities_on_user_id"
+  end
+
+  create_table "favorite_facilities", force: :cascade do |t|
+    t.bigint "student_id"
+    t.bigint "facility_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_favorite_facilities_on_facility_id"
+    t.index ["student_id"], name: "index_favorite_facilities_on_student_id"
+  end
+
+  create_table "missions", force: :cascade do |t|
+    t.bigint "senior_id"
+    t.bigint "student_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string "description"
+    t.string "statut"
+    t.integer "review_ponctuality"
+    t.integer "review_communication"
+    t.integer "review_satisfaction"
+    t.string "review_comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["senior_id"], name: "index_missions_on_senior_id"
+    t.index ["student_id"], name: "index_missions_on_student_id"
+  end
+
+  create_table "seniors", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "description"
+    t.bigint "facility_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_seniors_on_facility_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.date "date_of_birth"
+    t.string "address"
+    t.string "studies"
+    t.string "school"
+    t.integer "phone_number"
+    t.string "photo"
+    t.string "email"
+    t.string "motivation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +92,16 @@ ActiveRecord::Schema.define(version: 2018_11_12_134045) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "student"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "availabilities", "students"
+  add_foreign_key "facilities", "users"
+  add_foreign_key "favorite_facilities", "facilities"
+  add_foreign_key "favorite_facilities", "students"
+  add_foreign_key "missions", "seniors"
+  add_foreign_key "missions", "students"
+  add_foreign_key "seniors", "facilities"
 end

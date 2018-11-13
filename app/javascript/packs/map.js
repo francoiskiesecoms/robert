@@ -37,6 +37,13 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     console.log(bounds)
     map.fitBounds(bounds, {duration: 0, padding: 75});
   }
+    markers.forEach((marker) => {
+    new mapboxgl.Marker()
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML(marker.infoWindow.content))
+      .addTo(map);
+  })
   map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
   }));

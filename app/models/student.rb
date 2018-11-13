@@ -7,11 +7,11 @@ class Student < ApplicationRecord
   validates :date_of_birth, presence: true
   validates :address, presence: true
 
-  mount_uploader :photo, PhotoUploader
-
+  # mount_uploader :photo, PhotoUploader
+#
   belongs_to :user
-  has_many :favorite_facilities
-  has_many :availibilities
-  has_many :missions
+  has_many :favorite_facilities, dependent: :destroy
+  has_many :availibilities, dependent: :destroy
+  has_many :missions, dependent: :destroy
 
 end

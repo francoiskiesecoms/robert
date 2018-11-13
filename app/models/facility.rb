@@ -1,11 +1,13 @@
 class Facility < ApplicationRecord
   belongs_to :user
-
+  mount_uploader :photo, PhotoUploader
 
   validates :address, presence: true, uniqueness: true
 
-  has_many :favorite_facilities
+  has_many :favorite_facilities, dependent: :destroy
   has_many :seniors, dependent: :destroy
-  has_many :missions, through: :seniors
+  has_many :missions, through: :seniors, dependent: :destroy
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

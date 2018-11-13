@@ -5,3 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+5.times do
+  user = User.create!(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')
+  facility = Facility.create!(address: Faker::Address.full_address, description: Faker::SiliconValley.motto, user: user, name: "Maison Marie Immaculéee")
+
+  5.times do
+    senior = Senior.create!(name: Faker::Artist.name , age: 81 , description: "Cool grandpa", facility: facility)
+    mission = Mission.create!(start_time: Time.new(2018, 12, 20, 14, 30) , end_time: Time.new(2018, 12, 20, 18, 30), description: "Cinema with grandpa", senior: senior)
+    mission = Mission.create!(start_time: Time.new(2018, 10, 18, 10, 30) , end_time: Time.new(2018, 10, 18, 13, 30), description: "Cinema with grandpa", senior: senior)
+  end
+end
+
+student = Student.create!(
+  name: "Francois Kiesecoms",
+  address: "Rue des Champs Elysées",
+  email: "kiesecoms.francois@gmail.com",
+  motivation: "I'm studying nursing and would like to get more experience on weekends",
+  date_of_birth: "29/10/1994",
+  studies:" MA2 Business engineering",
+  school: "Solvay, ULB",
+  phone_number: "0491645783",
+  user: User.last
+)
+
+FavoriteFacility.create!(student:student, facility: Facility.last)
+FavoriteFacility.create!(student:student, facility: Facility.first)
+
+# Fit.create!(student: student, mission: Mission.last)
+
+
+
+
+
+

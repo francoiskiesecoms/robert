@@ -1,0 +1,33 @@
+
+
+
+<div class="page_container">
+  <h1>Job offers</h1>
+  <div class="headers">
+    <h4><strong><%= "(" + @missions.size.to_s + ") Browse" %></strong></h4>
+    <h4><%=link_to"(#{@student.upcoming_missions.size}) Upcoming", dashboard_missions_upcoming_path %></h4>
+    <h4><%=link_to "(#{@student.completed_missions.size}) Completed", dashboard_missions_completed_path %></h4>
+  </div>
+
+  <div class="mission_container">
+    <% @missions.each do |mission| %>
+      <div class="mission">
+        <div class="left">
+          <div class="schedule">
+            <p><%= mission.schedule.split("from")[0] %></p>
+            <p><%= mission.schedule.split("from")[1] %></p>
+          </div>
+          <p></p>
+        </div>
+        <div class="center">
+          <p><%= mission.senior.facility.name%></p>
+          <p><%= mission.description %></p>
+        </div>
+        <div class="right">
+          <%= link_to "Accept", new_fit_path(mission) , method: :post %>
+          <%= link_to "Refuse" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

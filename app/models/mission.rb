@@ -7,4 +7,8 @@ end
 
 
 
+
+  validates :description, presence: true
+  validates :statut, presence: true
+
 end

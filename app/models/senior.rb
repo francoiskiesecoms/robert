@@ -1,4 +1,10 @@
 class Senior < ApplicationRecord
   belongs_to :facility
-  has_many :missions
+
+
+  validates :name, uniqueness: true, presence: true
+  validates :age, presence: true
+
+  has_many :missions, dependent: :destroy
+
 end

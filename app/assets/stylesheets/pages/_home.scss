@@ -98,7 +98,7 @@
 .carousel,
 .carousel-inner {
   width:100%;
-  height:100%;
+  height:500px;
   z-index:0;
   overflow:hidden;
 }
@@ -112,7 +112,13 @@
 .carousel-caption {
   color: white !important;
   z-index: 3 !important;
-  bottom: 200px;
+  bottom: 70px;
+}
+.carousel-caption h5{
+  font-size: 16px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding: 10px;
 }
 .card-speciality {
   color: rgb(255, 255, 255);

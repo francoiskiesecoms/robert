@@ -5,6 +5,6 @@ class Senior < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :age, presence: true
 
-  has_many :missions
+  has_many :missions, dependent: :destroy
 
 end

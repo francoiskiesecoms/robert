@@ -3,20 +3,20 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   #main dashboard
-  get 'dashboard', to: 'profiles#dashboard', as: :dashboard
+  get 'dashboard', to: 'students#dashboard_summary', as: :dashboard
 
   #calendar: index and edit on the same page
-  get 'dashboard/calendar', to:'availibilities#index', as: :calendar
+  get 'dashboard/calendar', to:'students#availibilities', as: :calendar
   patch 'availibilities', to:'availibilities#update'
 
   #edit profile infos
-  get 'dashboard/profile', to:'profiles#profile', as: :profile
-  get 'dashboard/training', to:'profiles#training', as: :training
-  patch 'dashboard', to:'profiles#update'
+  get 'dashboard/profile', to:'students#profile', as: :profile
+  get 'dashboard/training', to:'students#training', as: :training
+  patch 'dashboard', to:'students#update'
 
   #show upcoming and completed missions
-  get 'dashboard/missions/upcoming', to:'students#upcoming'
-  get 'dashboard/missions/completed', to:'students#completed'
+  get 'dashboard/missions/upcoming', to:'students#upcoming_missions'
+  get 'dashboard/missions/completed', to:'students#completed_missions'
 
   #show all missions, with possibility to accept/refuse (1. change status of mission, 2. mission.student = current_user)
   get 'dashboard/missions', to:'missions#index'
@@ -25,8 +25,8 @@ Rails.application.routes.draw do
 
   get 'dashboard/facilities', to:'facilities#index'
 
-  get 'dashboard/revenues', to:'profiles#revenues', as: :revenues
+  get 'dashboard/revenues', to:'students#revenues', as: :revenues
   #reviews
-  get 'dashboard/reviews', to: "reviews#index"
+  get 'dashboard/reviews', to: "students#reviews"
 end
 

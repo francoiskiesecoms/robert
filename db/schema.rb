@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2018_11_13_165327) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_165327) do
     t.float "longitude"
     t.string "name"
     t.index ["user_id"], name: "index_facilities_on_user_id"
-  end
+
 
   create_table "favorite_facilities", force: :cascade do |t|
     t.bigint "student_id"
@@ -46,21 +48,28 @@ ActiveRecord::Schema.define(version: 2018_11_13_165327) do
     t.index ["student_id"], name: "index_favorite_facilities_on_student_id"
   end
 
+  create_table "fits", force: :cascade do |t|
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "mission_id"
+    t.index ["mission_id"], name: "index_fits_on_mission_id"
+    t.index ["student_id"], name: "index_fits_on_student_id"
+  end
+
   create_table "missions", force: :cascade do |t|
     t.bigint "senior_id"
-    t.bigint "student_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string "description"
-    t.string "statut"
     t.integer "review_ponctuality"
     t.integer "review_communication"
     t.integer "review_satisfaction"
     t.string "review_comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "pending", default: true
     t.index ["senior_id"], name: "index_missions_on_senior_id"
-    t.index ["student_id"], name: "index_missions_on_student_id"
   end
 
   create_table "seniors", force: :cascade do |t|
@@ -106,8 +115,8 @@ ActiveRecord::Schema.define(version: 2018_11_13_165327) do
   add_foreign_key "facilities", "users"
   add_foreign_key "favorite_facilities", "facilities"
   add_foreign_key "favorite_facilities", "students"
+  add_foreign_key "fits", "students"
   add_foreign_key "missions", "seniors"
-  add_foreign_key "missions", "students"
   add_foreign_key "seniors", "facilities"
   add_foreign_key "students", "users"
 end

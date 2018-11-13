@@ -18,6 +18,8 @@
   end
 end
 
+romane = User.create!(email: "romane@gmail.com", password: 'topsecret', password_confirmation: 'topsecret')
+
 student = Student.create!(
   name: "Francois Kiesecoms",
   address: "Rue des Champs Elysées",
@@ -27,11 +29,13 @@ student = Student.create!(
   studies:" MA2 Business engineering",
   school: "Solvay, ULB",
   phone_number: "0491645783",
-  user: User.last
+  user: romane
 )
 
 FavoriteFacility.create!(student:student, facility: Facility.last)
 FavoriteFacility.create!(student:student, facility: Facility.first)
+
+
 
 # Fit.create!(student: student, mission: Mission.last)
 

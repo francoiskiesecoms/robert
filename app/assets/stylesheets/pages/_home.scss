@@ -57,12 +57,16 @@
 }
 .apply-now {
   color: white;
-  padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
   background: #6AD58B;
   transition: background 0.3s ease;
-  align-item: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  padding: 20px 30px;
+  margin: 0 auto 40px;
 }
 .apply-now:hover {
   opacity: 1;
@@ -114,7 +118,102 @@
   color: rgb(255, 255, 255);
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
+.card-speciality a{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.card-speciality p {
+  font-weight: lighter;
+  padding: 15px;
+}
 .wrapper {
   background-size: cover;
+}
+
+.card-testimonial {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.alumni-picture {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 26px 0 rgba(0,0,0,0.2);
+}
+.testimonial-content {
+  padding: 15px;
+  font-weight: lighter;
+}
+.testimonial-content p {
+  font-size: smaller;
+}
+
+.show-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  font-weight: 900;
+  color: #7c7c7c;
+  border-radius: 4px;
+  background: #f8f8f8;
+  border: 1px solid #c6c6c6;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.17);
+  text-decoration: none;
+}
+.show-more:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+.card-facility-container {
+  flex: 0 0 33%;
+  padding: 15px;
+}
+.card-facility {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px #E7E5E5;
+  max-width: 380px;
+  margin: auto;
+  position: relative;
+}
+.card-facility-header {
+  background-color: #469AE0;
+  height: 200px;
+  background-size: cover;
+  border-radius: 3px 3px 0px 0px;
+  position: relative;
+}
+.card-facility-filter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 80%);
+}
+.card-facility-body {
+  padding: 10px;
+  position: relative;
+  text-transform: uppercase;
+  background: white;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.footer-section {
+  display: block;
+}
+.footer-section-links a{
+  display: block;
+  text-decoration: none;
 }

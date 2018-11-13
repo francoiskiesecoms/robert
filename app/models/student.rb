@@ -1,11 +1,8 @@
 class Student < ApplicationRecord
 
 
-  validates :name, uniquess: true
+  validates :name, presence: true
   validates :email, format: { with: /\A.*@.*\.com\z/ }
-  validates :phone_number, presence: true
-  validates :date_of_birth, presence: true
-  validates :address, presence: true
 
   # mount_uploader :photo, PhotoUploader
 #
@@ -13,6 +10,7 @@ class Student < ApplicationRecord
   has_many :favorite_facilities, dependent: :destroy
   has_many :availibilities, dependent: :destroy
   has_many :missions, dependent: :destroy
+  has_many :fits
 
   def favorite_missions
   missions = []
@@ -28,10 +26,12 @@ class Student < ApplicationRecord
 
   def upcoming_missions
     missions = []
-    fits.each do |fit|
+    unless fits.nil?
+      fits.each do |fit|
 
-      if fit.mission.start_time > Time.now
-        missions << fit.mission
+        if fit.mission.start_time > Time.now
+          missions << fit.mission
+        end
       end
     end
     missions
@@ -39,9 +39,11 @@ class Student < ApplicationRecord
 
   def completed_missions
     missions = []
-    fits.each do |fit|
-      if fit.mission.end_time <= Time.now
-        missions << fit.mission
+    unless fits.nil?
+      fits.each do |fit|
+        if fit.mission.end_time <= Time.now
+          missions << fit.mission
+        end
       end
     end
     missions

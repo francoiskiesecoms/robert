@@ -37,7 +37,6 @@ FavoriteFacility.create!(student:student, facility: Facility.first)
 #creating fits
 
 
-Fit.create!(student: student, mission: Mission.last)
 
 
 

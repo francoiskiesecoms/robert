@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AvailibilitiesControllerTest < ActionDispatch::IntegrationTest
+class AvailabilitiesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

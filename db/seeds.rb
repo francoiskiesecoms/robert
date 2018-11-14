@@ -32,12 +32,14 @@ student = Student.create!(
   user: romane
 )
 
+
 FavoriteFacility.create!(student:student, facility: Facility.last)
 FavoriteFacility.create!(student:student, facility: Facility.first)
 
+availability1 = Availability.create!(start_date: Time.new(2018, 12, 01, 10, 00), end_date: Time.new(2018, 12, 05, 18, 00), student: romane )
+availability1 = Availability.create!(start_date: Time.new(2018, 12, 09, 10, 00), end_date: Time.new(2018, 12, 30, 17, 00), student: romane )
 
 
-# Fit.create!(student: student, mission: Mission.last)
 
 
 

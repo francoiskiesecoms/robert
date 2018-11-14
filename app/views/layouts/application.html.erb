@@ -9,13 +9,14 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= javascript_pack_tag 'application' %>
+
   </head>
   <body>
     <%= render 'shared/navbar' unless @disable_nav %>
     <%= render 'shared/tabs' unless @disable_nav %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
     <%#= stylesheet_pack_tag "map" %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag "map" %>

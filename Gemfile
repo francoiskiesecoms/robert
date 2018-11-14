@@ -23,6 +23,8 @@ gem 'faker'
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem "highcharts-rails"
+gem "chartkick"
+gem 'groupdate'
 
 
 group :development do

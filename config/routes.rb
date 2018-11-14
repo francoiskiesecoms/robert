@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'students#dashboard', as: :dashboard
 
   #calendar: index and edit on the same page
-  get 'dashboard/calendar', to:'students#availibilities', as: :calendar
-  patch 'availibilities', to:'availibilities#update'
+  get 'dashboard/calendar', to:'students#availabilities', as: :calendar
+  post 'availabilities', to:'availabilities#create'
 
-  #edit profile infos
+
   get 'dashboard/profile', to:'students#profile', as: :profile
   get 'dashboard/training', to:'students#training', as: :training
   patch 'student', to:'students#update'

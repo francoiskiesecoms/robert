@@ -42,6 +42,10 @@ class StudentsController < ApplicationController
     end
   end
 
+  def availabilities
+    @availability = Availability.new
+  end
+
   def revenues
 
   end
@@ -50,23 +54,10 @@ class StudentsController < ApplicationController
 
   end
 
-  def availibilities
-
-  end
 
   private
   def student_params
     params.require(:student).permit(:name, :address, :date_of_birth, :studies, :school, :phone_number, :photo, :email, :motivation, :user_id)
   end
-
-
-
-
-
-
-
-
-
-
 
 end

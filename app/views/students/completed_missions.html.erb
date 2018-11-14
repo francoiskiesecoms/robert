@@ -2,7 +2,7 @@
 <div class="page_container">
   <h1>Job offers</h1>
   <div class="headers">
-    <h4><%=link_to"(#{@student.favorite_missions.size}) Browse", dashboard_missions_path %></h4>
+    <h4><%=link_to"(#{@student.acceptable_missions.size}) Browse", dashboard_missions_path %></h4>
     <h4><%=link_to "(#{@student.upcoming_missions.size}) Upcoming", dashboard_missions_upcoming_path %></h4>
     <h4><strong><%= "(" + @missions.size.to_s + ") Completed" %></strong></h4>
   </div>
@@ -28,3 +28,4 @@
     <% end %>
   </div>
 </div>
+

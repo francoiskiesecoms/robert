@@ -8,7 +8,7 @@ class Student < ApplicationRecord
 #
   belongs_to :user
   has_many :favorite_facilities, dependent: :destroy
-  has_many :availibilities, dependent: :destroy
+  has_many :availabilities, dependent: :destroy
   has_many :missions, dependent: :destroy
   has_many :fits
 
@@ -34,6 +34,26 @@ class Student < ApplicationRecord
     missions.reject do |mission|
       refused_missions.include? mission
     end
+  end
+
+  #mission that are still pending, later than today, and for which we don't already have a mission
+
+  def available_missions
+    favorite_missions.select do |fav_mission|
+      (fav_mission.pending) && (fav_mission.start_time > Time.now)
+    end
+  end
+
+  def acceptable_missions
+    acceptable_missions = []
+    available_missions.each do |mission|
+      availabilities.each do |availability|
+        if (mission.start_time >= availability.start_date) && (mission.end_time <= availability.end_date)
+          acceptable_missions << mission
+        end
+      end
+    end
+    acceptable_missions.uniq
   end
 
   def upcoming_missions

@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   #reviews
   get 'dashboard/reviews', to: "students#reviews"
 
-
+  get 'facility_add', to: "facilities#click_facility"
+  get 'facility_remove', to: "facilities#click_remove"
   # ---- post fit creation ------
 
   post 'missions/:id/accept', to: "fits#accept", as: :accept_fit

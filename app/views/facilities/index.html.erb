@@ -3,26 +3,33 @@
 <div style="display: flex;">
   <div class="container">
     <div class="row">
-      <% @facilities.each do |facility|%>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card"
-            style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-               url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
-            <div class="card-category"><%= Facility.name %></div>
-            <div class="card-description">
-              <h2><%= facility.address %></h2>
-              <p><%= facility.description %></p>
+        <% @facilities.each do |facility|%>
+          <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id%>">
+            <%= link_to facility_remove_path(facility: facility.id), remote: true do %>
+              <% if facility.photo.url %>
+                <div class="card card-facility" data-target="facility-<%= facility.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                 url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
+              <% else %>
+               <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url('https://cdn.someecards.com/posts/grandpa-grandson-birth-text-ok-pIq.png');margin-top: 10px; margin-bottom: 10px;">
+              <% end %>
+                <div class="card-category"><%= Facility.name %></div>
+                <div class="card-description">
+                  <h5><%= facility.address %></h5>
+                  <p><%= facility.description %></p>
+                </div>
+              </div>
             </div>
-              <a class="card-link" href="#" ></a>
-          </div>
-        </div>
+        <%end%>
       <%end%>
     </div>
   </div>
     <div
       id="map"
-      style="width: 100%;
+      style="width: 70%;
       height: 600px;"
       data-markers="<%= @markers.to_json %>"
     ></div>
 </div>
+
+

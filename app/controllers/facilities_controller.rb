@@ -17,4 +17,20 @@ class FacilitiesController < ApplicationController
       }
     end
   end
+
+  def click_facility
+    @facility = Facility.find params[:facility]
+    FavoriteFacility.create(student: Student.find_by(user_id: current_user.id), facility:@facility)
+    respond_to  do |format|
+       format.js
+    end
+  end
+
+  def click_remove
+    @facility = Facility.find params[:facility]
+    FavoriteFacility.find_by(student: Student.find_by(user_id: current_user.id), facility:@facility).destroy
+    respond_to  do |format|
+       format.js
+    end
+  end
 end

@@ -1,0 +1,13 @@
+<% if @facility %>
+
+alert("Facility added")
+document.getElementById('facility-<%= @facility.id %>').style.backgroundColor = "red"
+console.log('@facility')
+new_facility = document.getElementById('facility<%= @facility.id %>')
+console.log('new_facility')
+
+<% else %>
+
+console.log(' no facility')
+
+<% end %>

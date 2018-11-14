@@ -12,26 +12,35 @@ class Student < ApplicationRecord
   has_many :missions, dependent: :destroy
   has_many :fits
 
+
+  def refused_missions
+    refused_missions = []
+    fits.all.each do |fit|
+      refused_missions << fit.mission if fit.refused
+    end
+    refused_missions
+  end
+
   def favorite_missions
-  missions = []
-  Mission.all.each do |mission|
-    favorite_facilities.each do |fav_facility|
-      if fav_facility.facility == mission.senior.facility
-        missions << mission
+    missions = []
+    Mission.all.each do |mission|
+      favorite_facilities.each do |fav_facility|
+        if fav_facility.facility == mission.senior.facility
+          missions << mission
+        end
       end
     end
-  end
-  missions
+
+    missions.reject do |mission|
+      refused_missions.include? mission
+    end
   end
 
   def upcoming_missions
     missions = []
-    unless fits.nil?
-      fits.each do |fit|
-
-        if fit.mission.start_time > Time.now
-          missions << fit.mission
-        end
+    fits.each do |fit|
+      if (fit.mission.start_time > Time.now) && (fit.refused == false)
+        missions << fit.mission
       end
     end
     missions
@@ -41,7 +50,7 @@ class Student < ApplicationRecord
     missions = []
     unless fits.nil?
       fits.each do |fit|
-        if fit.mission.end_time <= Time.now
+        if fit.mission.end_time <= Time.now && (fit.refused == false)
           missions << fit.mission
         end
       end

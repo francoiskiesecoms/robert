@@ -1,19 +1,27 @@
+<div class="page_container">
+  <div class="row">
+    <div class="col-xs-12-col-sm-4-col-sm-offset-4">
+      <div class="form-login">
+        <h2>Edit your training</h2>
+      <%= form_for @student do |f| %>
+        <div class="form-group">
+          <%= f.label :studies %>
+          <%= f.text_field :studies, class: 'form-control' %>
+        </div>
 
-<%= form_for @student do |f| %>
-  <div class="form-group">
-    <%= f.label :studies %>
-    <%= f.text_field :studies, class: 'form-control' %>
+        <div class="form-group">
+          <%= f.label :school %>
+          <%= f.text_field :school, class: 'form-control'  %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :motivation %>
+          <%= f.text_field :motivation,  class: 'form-control'  %>
+        </div>
+
+          <%= f.submit "Update", class: "btn btn-primary" %>
+      <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-group">
-    <%= f.label :school %>
-    <%= f.text_field :school, class: 'form-control'  %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :motivation %>
-    <%= f.text_field :motivation,  class: 'form-control'  %>
-  </div>
-
-    <%= f.submit "Update", class: "btn btn-primary" %>
-<% end %>
+</div>

@@ -16,7 +16,7 @@ class StudentsController < ApplicationController
     @missions = @student.completed_missions
   end
 
-  def dashboard_summary
+  def dashboard
 
   end
 

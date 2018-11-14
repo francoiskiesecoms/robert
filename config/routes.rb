@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   #main dashboard
-  get 'dashboard', to: 'students#dashboard_summary', as: :dashboard
+  get 'dashboard', to: 'students#dashboard', as: :dashboard
 
   #calendar: index and edit on the same page
   get 'dashboard/calendar', to:'students#availibilities', as: :calendar

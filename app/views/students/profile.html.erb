@@ -1,0 +1,34 @@
+
+<%= form_for @student do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+      <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control'  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address,  class: 'form-control'  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :photo %>
+    <%= f.file_field(:photo)%>
+  </div>
+
+    <%= f.hidden_field(:photo_cache) %>
+
+
+    <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, class: 'form-control'  %>
+  </div>
+
+    <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
+
+

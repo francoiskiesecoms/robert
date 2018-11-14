@@ -4,8 +4,8 @@ class Student < ApplicationRecord
   validates :name, presence: true
   validates :email, format: { with: /\A.*@.*\.com\z/ }
 
-  # mount_uploader :photo, PhotoUploader
-#
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :user
   has_many :favorite_facilities, dependent: :destroy
   has_many :availabilities, dependent: :destroy

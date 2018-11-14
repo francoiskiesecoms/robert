@@ -21,11 +21,25 @@ class StudentsController < ApplicationController
   end
 
   def profile
+    @student = Student.find_by(user_id: current_user.id)
+
+
+  end
+
+  def training
+    @student = Student.find_by(user_id: current_user.id)
 
   end
 
   def update
+    @student = Student.find_by(user_id: current_user.id)
+    @student.update(student_params)
 
+    if @student.save
+      redirect_to profile_path
+    else
+      render :profile
+    end
   end
 
   def revenues
@@ -39,5 +53,20 @@ class StudentsController < ApplicationController
   def availibilities
 
   end
+
+  private
+  def student_params
+    params.require(:student).permit(:name, :address, :date_of_birth, :studies, :school, :phone_number, :photo, :email, :motivation, :user_id)
+  end
+
+
+
+
+
+
+
+
+
+
 
 end

@@ -1,8 +1,8 @@
-import Highcharts from 'highcharts';
-require('highcharts')(Highcharts);
 
-function myChart () {
-    var myChart = Highcharts.chart('container', {
+
+
+$(function () {
+    var myChart = Highcharts.chart('chart', {
         chart: {
             type: 'bar'
         },
@@ -25,8 +25,7 @@ function myChart () {
             data: [5, 7, 3]
         }]
     });
-};
-
+});
 
 
 export { myChart };

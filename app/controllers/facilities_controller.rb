@@ -17,4 +17,18 @@ class FacilitiesController < ApplicationController
       }
     end
   end
+
+  def click_facility
+    @facility = Facility.find params[:facility]
+    respond_to  do |format|
+       format.js
+    end
+  end
+
+  def click_remove
+    @facility = Facility.find params[:facility]
+    respond_to  do |format|
+       format.js
+    end
+  end
 end

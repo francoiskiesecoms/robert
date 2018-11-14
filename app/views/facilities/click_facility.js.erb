@@ -1,0 +1,12 @@
+<% if @facility %>
+
+alert("hey")
+document.getElementById('facility-<%= @facility.id %>').style.backgroundColor = "red"
+
+<% else %>
+
+console.log(' no facility')
+
+<% end %>
+// console.log('facility')
+// document.getElementById('facility-<%= @facility.id %>').style.color = "red"

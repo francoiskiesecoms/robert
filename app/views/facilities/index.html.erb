@@ -11,7 +11,7 @@
                  url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
               <% else %>
                <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url('https://cdn.someecards.com/posts/grandpa-grandson-birth-text-ok-pIq.png')">
+              url('https://cdn.someecards.com/posts/grandpa-grandson-birth-text-ok-pIq.png');margin-top: 10px; margin-bottom: 10px;">
               <% end %>
                 <div class="card-category"><%= Facility.name %></div>
                 <div class="card-description">

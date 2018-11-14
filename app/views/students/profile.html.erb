@@ -1,34 +1,42 @@
+<div class="page_container">
+  <div class="row">
+    <div class="col-xs-12-col-sm-4-col-sm-offset-4">
+      <div id="editprofile" class="form-login">
+        <h2> Edit your profile</h2>
+        <%= form_for @student do |f| %>
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
 
-<%= form_for @student do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
+              <div class="form-group">
+            <%= f.label :email %>
+            <%= f.text_field :email, class: 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :address %>
+            <%= f.text_field :address,  class: 'form-control'  %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :photo %>
+            <%= f.file_field(:photo)%>
+          </div>
+
+            <%= f.hidden_field(:photo_cache) %>
+
+
+            <div class="form-group">
+            <%= f.label :phone_number %>
+            <%= f.text_field :phone_number, class: 'form-control'  %>
+          </div>
+
+            <%= f.submit "Update", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-      <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control'  %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address,  class: 'form-control'  %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :photo %>
-    <%= f.file_field(:photo)%>
-  </div>
-
-    <%= f.hidden_field(:photo_cache) %>
-
-
-    <div class="form-group">
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number, class: 'form-control'  %>
-  </div>
-
-    <%= f.submit "Update", class: "btn btn-primary" %>
-<% end %>
+</div>
 
 

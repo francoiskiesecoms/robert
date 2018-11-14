@@ -13,6 +13,7 @@
   5.times do
     senior = Senior.create!(name: Faker::Artist.name , age: 81 , description: "Cool grandpa", facility: facility)
     mission = Mission.create!(start_time: Time.new(2018, 12, 20, 14, 30) , end_time: Time.new(2018, 12, 20, 18, 30), description: "Cinema with grandpa", senior: senior)
+    mission = Mission.create!(start_time: Time.new(2018, 12, 6, 14, 30) , end_time: Time.new(2018, 12, 8, 18, 30), description: "Cinema with grandpa", senior: senior)
     mission = Mission.create!(start_time: Time.new(2018, 10, 18, 10, 30) , end_time: Time.new(2018, 10, 18, 13, 30), description: "Cinema with grandpa", senior: senior)
   end
 end
@@ -36,8 +37,8 @@ FavoriteFacility.create!(student:student, facility: Facility.last)
 FavoriteFacility.create!(student:student, facility: Facility.first)
 
 
-availability1 = Availability.create!(start_date: Time.new(2018, 12, 01, 10, 00), end_date: Time.new(2018, 12, 05, 18, 00), student: romane )
-availability1 = Availability.create!(start_date: Time.new(2018, 12, 09, 10, 00), end_date: Time.new(2018, 12, 30, 17, 00), student: romane )
+availability1 = Availability.create!(start_date: Time.new(2018, 12, 1, 10, 00) , end_date: Time.new(2018, 12, 5, 18, 00), student: student )
+availability2 = Availability.create!(start_date: Time.new(2018, 12, 9, 10, 00) , end_date: Time.new(2018, 12, 28, 17, 00), student: student )
 
 
 

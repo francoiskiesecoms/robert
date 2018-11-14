@@ -1,4 +1,5 @@
-
+import Highcharts from 'highcharts';
+require('highcharts')(Highcharts);
 
 function myChart () {
     var myChart = Highcharts.chart('container', {

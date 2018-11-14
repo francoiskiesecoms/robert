@@ -61,6 +61,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chartkick (3.0.1)
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
@@ -89,6 +90,10 @@ GEM
     geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (4.1.0)
+      activesupport (>= 4.2)
+    highcharts-rails (6.0.3)
+      railties (>= 3.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.1.1)
@@ -239,12 +244,15 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3)
   carrierwave (~> 1.2)
+  chartkick
   cloudinary
   devise
   dotenv-rails
   faker
   font-awesome-sass (~> 5.0.9)
   geocoder
+  groupdate
+  highcharts-rails
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)

@@ -22,8 +22,15 @@ gem 'faker'
 
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
+
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-rails'
+
+gem "highcharts-rails"
+gem "chartkick"
+gem 'groupdate'
+
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

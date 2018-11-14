@@ -1,5 +1,7 @@
 ul#myTab {
   height: 70px;
+  position: sticky;
+  top: 0;
 }
 li.nav-item a{
   height: 70px;

@@ -1,0 +1,19 @@
+
+<%= form_for @student do |f| %>
+  <div class="form-group">
+    <%= f.label :studies %>
+    <%= f.text_field :studies, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :school %>
+    <%= f.text_field :school, class: 'form-control'  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :motivation %>
+    <%= f.text_field :motivation,  class: 'form-control'  %>
+  </div>
+
+    <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>

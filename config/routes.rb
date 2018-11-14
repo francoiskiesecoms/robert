@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #edit profile infos
   get 'dashboard/profile', to:'students#profile', as: :profile
   get 'dashboard/training', to:'students#training', as: :training
-  patch 'dashboard', to:'students#update'
+  patch 'student', to:'students#update'
 
   #show upcoming and completed missions
   get 'dashboard/missions/upcoming', to:'students#upcoming_missions'

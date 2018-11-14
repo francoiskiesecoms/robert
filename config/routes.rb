@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   # ---- post fit creation ------
 
-  post 'missions/:id/fit', to: "fits#create", as: :new_fit
+  post 'missions/:id/accept', to: "fits#accept", as: :accept_fit
+  post 'missions/:id/refuse', to: "fits#refuse", as: :refuse_fit
 end
 

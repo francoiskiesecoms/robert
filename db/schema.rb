@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_090246) do
 
   create_table "missions", force: :cascade do |t|
     t.bigint "senior_id"
+    t.bigint "student_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string "description"
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_090246) do
     t.datetime "updated_at", null: false
     t.boolean "pending", default: true
     t.index ["senior_id"], name: "index_missions_on_senior_id"
+    t.index ["student_id"], name: "index_missions_on_student_id"
   end
 
   create_table "seniors", force: :cascade do |t|
@@ -116,6 +118,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_090246) do
   add_foreign_key "favorite_facilities", "students"
   add_foreign_key "fits", "students"
   add_foreign_key "missions", "seniors"
+  add_foreign_key "missions", "students"
   add_foreign_key "seniors", "facilities"
   add_foreign_key "students", "users"
 end

@@ -84,6 +84,21 @@ nav.sidebar:hover{
 .forAnimate{
   opacity: 0;
 }
+.dropdown-toggle {
+  margin-top: 30px;
+}
+.dropdown-menu >li>a {
+  margin: 20px;
+  font-weight: lighter;
+}
+.active a{
+  height: 70px;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  font-size: larger;
+}
+
 }
 
 @media (min-width: 1330px) {
@@ -101,19 +116,6 @@ nav.sidebar{
 nav.sidebar .forAnimate{
   opacity: 1;
 }
-}
-
-nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
-color: #0074D9;
-background-color: transparent;
-}
-
-nav:hover .forAnimate{
-opacity: 1;
-}
-section{
-padding-left: 15px;
-}
 .dropdown-toggle {
   margin-top: 30px;
 }
@@ -127,4 +129,18 @@ padding-left: 15px;
   text-align: center;
   justify-content: space-around;
   font-size: larger;
+}
+
+}
+
+nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+color: #0074D9;
+background-color: transparent;
+}
+
+nav:hover .forAnimate{
+opacity: 1;
+}
+section{
+padding-left: 15px;
 }

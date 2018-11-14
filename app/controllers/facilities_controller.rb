@@ -1,6 +1,17 @@
 class FacilitiesController < ApplicationController
   def index
+
+
+    @user_student = Student.find_by(user_id: current_user.id)
+    @facility_chose = []
     @facilities = Facility.all
+    if @user_student.favorite_facilities
+      @user_student.favorite_facilities.each do |fav|
+            @facility_chose << fav.facility_id
+      end
+    end
+
+
 
     if params[:query].present?
       @facilities = Facility.search_by_address(params[:query])

@@ -4,14 +4,25 @@
   <div class="container">
     <div class="row">
         <% @facilities.each do |facility|%>
-          <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id%>">
+          <% if @facility_chose.include?(facility.id) %>
+            <% chosen = true %>
+
+           <% else %>
+
+            <% chosen = false %>
+           <% end %>
+          <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id %>" style="<% if chosen %>background-color: red<% end %>">
             <%= link_to facility_remove_path(facility: facility.id), remote: true do %>
+
               <% if facility.photo.url %>
                 <div class="card card-facility" data-target="facility-<%= facility.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
                  url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
+
               <% else %>
+
                <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
               url('https://cdn.someecards.com/posts/grandpa-grandson-birth-text-ok-pIq.png');margin-top: 10px; margin-bottom: 10px;">
+
               <% end %>
                 <div class="card-category"><%= Facility.name %></div>
                 <div class="card-description">

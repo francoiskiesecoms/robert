@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 5.times do
   user = User.create!(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')
   facility = Facility.create!(address: Faker::Address.full_address, description: Faker::SiliconValley.motto, user: user, name: "Maison Marie Immaculéee")
@@ -21,13 +20,13 @@ end
 romane = User.create!(email: "romane@gmail.com", password: 'topsecret', password_confirmation: 'topsecret')
 
 student = Student.create!(
-  name: "Francois Kiesecoms",
+  name: "Romane",
   address: "Rue des Champs Elysées",
   email: "kiesecoms.francois@gmail.com",
   motivation: "I'm studying nursing and would like to get more experience on weekends",
   date_of_birth: "29/10/1994",
   studies:" MA2 Business engineering",
-  school: "Solvay, ULB",
+  school: "Solvay, UCL",
   phone_number: "0491645783",
   user: romane
 )
@@ -35,9 +34,10 @@ student = Student.create!(
 FavoriteFacility.create!(student:student, facility: Facility.last)
 FavoriteFacility.create!(student:student, facility: Facility.first)
 
+#creating fits
 
 
-# Fit.create!(student: student, mission: Mission.last)
+Fit.create!(student: student, mission: Mission.last)
 
 
 

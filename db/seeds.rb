@@ -15,6 +15,7 @@
     mission = Mission.create!(start_time: Time.new(2018, 12, 20, 14, 30) , end_time: Time.new(2018, 12, 20, 18, 30), description: "Cinema with grandpa", senior: senior)
     mission = Mission.create!(start_time: Time.new(2018, 12, 6, 14, 30) , end_time: Time.new(2018, 12, 8, 18, 30), description: "Cinema with grandpa", senior: senior)
     mission = Mission.create!(start_time: Time.new(2018, 10, 18, 10, 30) , end_time: Time.new(2018, 10, 18, 13, 30), description: "Cinema with grandpa", senior: senior)
+    mission = Mission.create!(start_time: Time.new(2019, 1, 5, 10, 30) , end_time: Time.new(2019, 1, 5, 13, 30), description: "Cinema with grandpa", senior: senior)
   end
 end
 
@@ -39,11 +40,34 @@ FavoriteFacility.create!(student:student, facility: Facility.first)
 
 availability1 = Availability.create!(start_date: Time.new(2018, 12, 1, 10, 00) , end_date: Time.new(2018, 12, 5, 18, 00), student: student )
 availability2 = Availability.create!(start_date: Time.new(2018, 12, 9, 10, 00) , end_date: Time.new(2018, 12, 28, 17, 00), student: student )
+availability2 = Availability.create!(start_date: Time.new(2019, 1, 2, 10, 00) , end_date: Time.new(2019, 1, 28, 17, 00), student: student )
 
+Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[0])
+Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[1])
+Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[2])
 
+mission1= Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[0]
+mission2= Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[1]
+mission3= Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[2]
 
+mission1.review_ponctuality = 4
+mission1.review_communication = 2
+mission1.review_satisfaction = 5
+mission1.review_comment = "Romane was awesome. We brought me to a place called Bclub, and I danced with so many of her friends!!! So cool!! "
 
+mission2.review_ponctuality = 4
+mission2.review_communication = 2
+mission2.review_satisfaction = 5
+mission2.review_comment = "Romane showed up 2 hours late cause she broke her car.. Do not really believe her but still, she was a nice to play soccer with "
 
+mission3.review_ponctuality = 4
+mission3.review_communication = 5
+mission3.review_satisfaction = 5
+mission3.review_comment = "Top !!! Top !!! So cool!!!!!!! Damnnnnn Grandkids c'est d'la bal "
+
+mission1.save
+mission2.save
+mission3.save
 
 
 

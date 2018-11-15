@@ -1,11 +1,11 @@
-<div class="navbar-homepage">
+<div class="navbar-homepage" id="myNavbar">
 
-  <a href="/" class="navbar-homepage-brand">
-    <img src="" alt="logo">
+  <a href="" class="navbar-homepage-brand">
+    <img src="https://us.123rf.com/450wm/rolandtopor/rolandtopor1601/rolandtopor160100208/51668215-color-tree-roots-and-background-vector-illustration-.jpg?ver=6" alt="logo">
   </a>
   <div class="navbar-homepage-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-homepage-item navbar-homepage-link">Sign In</a>
+    <%= link_to "Sign In", new_user_session_path, class: "navbar-homepage-item navbar-homepage-link" %>
     <a href="" class="navbar-homepage-item navbar-homepage-link">Contact us +32 123 45 67 89</a>
   </div>
 </div>
@@ -14,7 +14,7 @@
   <div class="banner-homepage-content">
     <h1>Robert & Romane</h1>
     <p>Quality moments shared between students & elderlies </p>
-    <a href="#" class="apply-now">Apply now !</a>
+    <%= link_to "Apply now !",new_user_session_path, class: "apply-now"%>
   </div>
 </div>
 
@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <a href="#" class="apply-now" >Apply now !</a>
+    <%= link_to "Apply now !",new_user_session_path, class: "apply-now"%>
   </div>
 </div>
 
@@ -112,7 +112,7 @@
            <h2 style="text-align: center"> <strong> Two Generations</strong></h2>
            <h3 style="text-align: center">A magical Experience </h3>
            <p style="text-align: center"> Robert&Romane's take a different approach on aging by connecting seniors to fun and energetic college students </p>
-           <a href="#" class="apply-now">Apply now !</a>
+           <%= link_to "Apply now !",new_user_session_path, class: "apply-now"%>
         </div>
       </div>
     </div>
@@ -161,33 +161,34 @@
       </div>
     </div>
   </div>
-  <a href="#" class="show-more">Show more facilities</a>
+  <%= link_to "Show more facilities", dashboard_facilities_path, class: "show-more" %>>
 </div>
 
 <div class="wrapper">
   <div class="container">
-    <div class="footer">
-      <div class="footer-section">
-        <h3> Contact us</h3>
-        <p> <i class="fas fa-map-marker-alt"></i> Address </p>
-        <p> <i class="fas fa-phone"></i> Phone number</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick links</h3>
-        <div class="footer-section-links">
-          <a href="/">About</a>
-          <a href="/">FAQ</a>
-          <a href="/">Blog</a>
+    <div class="divider"></div>
+      <div class="footer">
+        <div class="footer-section">
+          <h3> Contact us</h3>
+          <p> <i class="fas fa-map-marker-alt"></i> Address </p>
+          <p> <i class="fas fa-phone"></i> Phone number</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick links</h3>
+          <div class="footer-section-links">
+            <a href="/">About</a>
+            <a href="/">FAQ</a>
+            <a href="/">Blog</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Follow us</h3>
+          <div class="footer-section-links">
+              <a href="/"> <i class="fab fa-twitter"></i> Twitter</a>
+              <a href="/"> <i class="fab fa-facebook-square"></i> Facebook</a>
+              <a href="/"> <i class="fab fa-instagram"></i> Instagram</a>
+          </div>
         </div>
       </div>
-      <div class="footer-section">
-        <h3>Follow us</h3>
-        <div class="footer-section-links">
-            <a href="/"> <i class="fab fa-twitter"></i> Twitter</a>
-            <a href="/"> <i class="fab fa-facebook-square"></i> Facebook</a>
-            <a href="/"> <i class="fab fa-instagram"></i> Instagram</a>
-        </div>
-      </div>
-    </div>
   </div>
 </div>

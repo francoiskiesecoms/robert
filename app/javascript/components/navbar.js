@@ -1,11 +1,12 @@
 function initUpdateNavbarOnScroll() {
   const navbar = document.querySelector('.navbar-homepage');
+  console.log(navbar);
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
-        navbar.classList.add('navbar-homepage-blue');
+      if (window.scrollY >= (window.innerHeight - 200)) {
+        navbar.classList.add('navbar-homepage-white');
       } else {
-        navbar.classList.remove('navbar-homepage-blue');
+        navbar.classList.remove('navbar-homepage-white');
       }
     });
   }

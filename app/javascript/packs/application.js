@@ -1,12 +1,12 @@
 import "bootstrap";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
 import Chartkick from "chartkick"
 window.Chartkick = Chartkick;
 
 // for Chart.js
 import Chart from "chart.js";
 Chartkick.addAdapter(Chart);
-initUpdateNavbarOnScroll();
 
 // import { myChart } from '../components/highcharts';
 // myChart();

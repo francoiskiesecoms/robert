@@ -6,6 +6,7 @@ nav.sidebar, .main{
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
 }
 
 .main{
@@ -84,21 +85,6 @@ nav.sidebar:hover{
 .forAnimate{
   opacity: 0;
 }
-.dropdown-toggle {
-  margin-top: 30px;
-}
-.dropdown-menu >li>a {
-  margin: 20px;
-  font-weight: lighter;
-}
-.active a{
-  height: 70px;
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-  font-size: larger;
-}
-
 }
 
 @media (min-width: 1330px) {
@@ -116,20 +102,6 @@ nav.sidebar{
 nav.sidebar .forAnimate{
   opacity: 1;
 }
-.dropdown-toggle {
-  margin-top: 30px;
-}
-.dropdown-menu >li>a {
-  margin: 20px;
-  font-weight: lighter;
-}
-.active a{
-  height: 70px;
-  display: flex;
-  text-align: center;
-  justify-content: space-around;
-  font-size: larger;
-}
 
 }
 
@@ -143,4 +115,18 @@ opacity: 1;
 }
 section{
 padding-left: 15px;
+}
+.dropdown-toggle {
+  margin-top: 30px;
+}
+.dropdown-menu >li>a {
+  margin: 20px;
+  font-weight: lighter;
+}
+.active a{
+  height: 70px;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  font-size: larger;
 }

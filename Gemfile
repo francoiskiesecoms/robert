@@ -25,6 +25,7 @@ gem 'cloudinary'
 
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-rails'
+gem 'momentjs-rails', '>= 2.9'
 
 gem "highcharts-rails"
 gem "chartkick"

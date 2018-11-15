@@ -9,7 +9,7 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 0 !important;
+  z-index: 1000 !important;
   .navbar-homepage-link {
     color: white;
     font-size: 20px;
@@ -18,7 +18,7 @@
 
 .navbar-homepage-white {
   background-color: white;
-  z-index: 0 !important;
+  z-index: 1000 !important;
   .navbar-homepage-link {
     color: #0074D9;
     font-size: 20px;

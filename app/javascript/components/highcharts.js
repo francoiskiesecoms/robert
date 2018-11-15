@@ -29,3 +29,4 @@ $(function () {
 
 
 export { myChart };
+<%= column_chart [["January", 3] , ["February", 4 ], ["", 5 ], [ "zee", 7]] %>

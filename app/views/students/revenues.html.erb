@@ -1,2 +1,4 @@
-<div id="container" style="width:100%; height:400px;"></div>
-<%= pie_chart [["ere", 3] , ["ert", 4 ], ["zezr", 5 ], [ "zee", 7]] %>
+
+<div class="container">
+  <%= column_chart([{ name: 'Received', stack: 'stack1', data: [['January', 1],['Feburary',2],['Mars',3],['April', 4],['May', 4],['June', 4],['Jully', 4],['August', 4],['September', 4],['October', 4],['November', 4],['December', 4]] }, { name: 'TBR', stack: 'stack1', data: [['January', 1],['Feburary',2],['Mars',3],['April', 4],['May', 4],['June', 4],['Jully', 4],['August', 4],['September', 4],['October', 4],['November', 4],['December', 4]] }], stacked: true)%>
+</div>

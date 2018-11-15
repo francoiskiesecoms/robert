@@ -3,9 +3,48 @@
 }
 
 .set_availability {
-  flex: 0 0 230px;
+  flex: 0 0 220px;
 }
 
 .show {
   flex: 1 1 auto;
+}
+
+.availability {
+  display: flex;
+  background-color: white;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  margin-right: 50px;
+}
+
+.availability p {
+  flex: 1 1 auto;
+}
+
+.icons {
+  margin-right: 30px;
+}
+
+i {
+  margin-left: 5px;
+
+}
+
+.set_availability {
+  background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
+
+th {
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
 }

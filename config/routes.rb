@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   #calendar: index and edit on the same page
   get 'dashboard/calendar', to:'students#availabilities', as: :calendar
+
+  patch 'availability', to: 'availabilities#update'
+
   post 'availabilities', to:'availabilities#create'
+  delete 'availabilities/:id', to:'availabilities#destroy', as: :delete_availability
 
 
   get 'dashboard/profile', to:'students#profile', as: :profile

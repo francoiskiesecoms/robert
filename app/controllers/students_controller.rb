@@ -22,13 +22,10 @@ class StudentsController < ApplicationController
 
   def profile
     @student = Student.find_by(user_id: current_user.id)
-
-
   end
 
   def training
     @student = Student.find_by(user_id: current_user.id)
-
   end
 
   def update
@@ -45,6 +42,7 @@ class StudentsController < ApplicationController
   def availabilities
     @availability = Availability.new
   end
+
 
   def revenues
     @student = Student.find_by(user_id: current_user.id)
@@ -80,7 +78,6 @@ class StudentsController < ApplicationController
   def reviews
 
   end
-
 
   private
 

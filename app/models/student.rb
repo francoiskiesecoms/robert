@@ -48,7 +48,7 @@ class Student < ApplicationRecord
     acceptable_missions = []
     available_missions.each do |mission|
       availabilities.each do |availability|
-        if (mission.start_time >= availability.start_date) && (mission.end_time <= availability.end_date)
+        if (mission.start_time >= availability.start_date) && (mission.end_time <= availability.end_date) && (availability[mission.start_time.strftime("%A").downcase] == true)
           acceptable_missions << mission
         end
       end

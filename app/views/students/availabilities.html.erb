@@ -1,11 +1,69 @@
 <div class="page_container">
+  <h3>Great! you will receive missions from: </h3>
   <div class="flex">
     <div class="show">
-      <ul>
-        <%Student.find_by(user:current_user).availabilities.each do |availability| %>
-          <li><%= availability.start_date %></li>
-        <%end%>
-      </ul>
+      <%Student.find_by(user:current_user).availabilities.each do |availability| %>
+        <div class="availability">
+          <p> <%= availability.schedule %> </p>
+          <div class="icons">
+            <i class="far fa-calendar-alt" data-toggle="modal" data-target="#myModal-<%= availability.id%>" ></i>
+             <%= link_to delete_availability_path(availability), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="far fa-trash-alt"></i>
+             <%end%>
+          </div>
+
+
+           <!-- edit link -->
+          <!-- Modal -->
+          <div class="modal fade" id="myModal-<%= availability.id%>" tabindex="-1" role="dialog " aria-labelledby="myModalLabel">
+            <div class="modal-dialog" style="width:800px" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Change my schedule</h4>
+                </div>
+                <div class="modal-body" style="display:flex">
+
+                <%= form_for availability do |f| %>
+                    <table >
+                      <tr>
+
+                        <th> <%= f.label :monday %></th>
+                        <th> <%= f.label :tuesday %></th>
+                        <th> <%= f.label :wednesday %></th>
+                        <th> <%= f.label :thursday %></th>
+                        <th> <%= f.label :friday %></th>
+                        <th> <%= f.label :saturday %></th>
+                        <th> <%= f.label :sunday %></th>
+                      </tr>
+                      <tr>
+                        <th> <%= f.check_box :monday %></th>
+                        <th> <%= f.check_box :tuesday %></th>
+                        <th> <%= f.check_box :wednesday %></th>
+                        <th> <%= f.check_box :thursday %></th>
+                        <th> <%= f.check_box :friday %></th>
+                        <th> <%= f.check_box :saturday %></th>
+                        <th> <%= f.check_box :sunday %></th>
+                      </tr>
+                    </table>
+                    <%= f.hidden_field :availability_id, value: availability.id %>
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <%= f.submit "Save changes", class: "btn btn-primary" %>
+
+                </div>
+                <%end%>
+
+              </div>
+            </div>
+          </div>
+
+           <!-- end of modal  -->
+        </div>
+      <%end%>
+
     </div>
 
     <div class="set_availability">
@@ -26,4 +84,15 @@
 
     </div>
   </div>
+
+
+
+
+
+
+
+
+
 </div>
+
+

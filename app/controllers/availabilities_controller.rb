@@ -10,35 +10,38 @@ class AvailabilitiesController < ApplicationController
     redirect_to calendar_path
   end
 
+  def update
+    @availability = Availability.find(availability_params[:availability_id])
+    @availability.monday = convert_to_boolean(availability_params[:monday])
+    @availability.tuesday = convert_to_boolean(availability_params[:tuesday])
+    @availability.wednesday = convert_to_boolean(availability_params[:wednesday])
+    @availability.thursday = convert_to_boolean(availability_params[:thursday])
+    @availability.friday = convert_to_boolean(availability_params[:friday])
+    @availability.saturday = convert_to_boolean(availability_params[:saturday])
+    @availability.sunday = convert_to_boolean(availability_params[:sunday])
+    if @availability.save
+      redirect_to calendar_path
+    end
+  end
+
+  def destroy
+    Availability.find(params[:id]).destroy
+    redirect_to calendar_path
+  end
+
   private
 
   def availability_params
-    params.require(:availability).permit(:start_date, :end_date, :student_id)
+    params.require(:availability).permit(:start_date, :end_date, :student_id, :monday, :tuesday, :wednesday, :thursday, :friday, :availability_id)
   end
 
   def convert_to(date_string)
     parsed = Date.strptime(date_string, "%m/%d/%Y")
   end
 
+  def convert_to_boolean(binary)
+    binary == "1"
+  end
+
 end
 
-
-
-  # def update
-  #   @grandparent = Grandparent.find(params[:id])
-  #   @grandparent.update(grandparent_params)
-
-  #   unless grandparent_params[:start_date].nil?
-  #     @grandparent.start_date = convert_to(grandparent_params[:start_date])
-  #   end
-
-  #   unless grandparent_params[:end_date].nil?
-  #     @grandparent.end_date = convert_to(grandparent_params[:end_date])
-  #   end
-
-  #   if @grandparent.save
-  #     redirect_to profile_path(current_user)
-  #   else
-  #     render :edit
-  #   end
-  # end

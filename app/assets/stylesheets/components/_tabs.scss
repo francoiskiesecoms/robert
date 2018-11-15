@@ -8,7 +8,12 @@ li.nav-item a{
   height: 70px;
   color: #777;
   font-size: 20px;
+  letter-spacing: 2px;
   padding-top: 15px;
   padding-left: 30px;
   padding-right: 30px;
+}
+li.nav-item a:hover {
+  opacity: 0.8;
+  font-weight: 500;
 }

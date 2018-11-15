@@ -1,19 +1,13 @@
 <div class="wrapper">
-
   <div class="container">
     <div class="row">
       <div class="col-xs-12-col-sm-6-col-sm-offset-6">
         <h4 style="text-align: center; front-size:25px;">Benefit income for 2018</h4>
-        <p style="text-align: left; front-size:10px;"><%= @sum %></p>
-
-
-    <%= column_chart([{ name: 'Received', stack: 'stack1', data: @first_chart_array },
-
-
-    { name: 'TBR', stack: 'stack1', data: @second_chart_array}], stacked: true, height: "430px")%>
-    </div>
+            <p style="text-align: left; front-size:10px;">
+            <% if @sum == 0 %>No revenu yet<%else%> <%= @sum %>$<%end%></p>
+        <%= column_chart([{ name: 'Received', stack: 'stack1', data: @first_chart_array },{ name: 'TBR', stack: 'stack1', data: @second_chart_array}], stacked: true, height: "430px")%>
+      </div>
     </div>
   </div>
-
 </div>
 

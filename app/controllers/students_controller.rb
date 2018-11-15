@@ -51,11 +51,9 @@ class StudentsController < ApplicationController
     @missions_completed = @student.completed_missions
     @missions_upcoming = @student.upcoming_missions
 
-
     @first_chart_array = [
-        ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]
+    ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]
     ]
-
     @missions_completed.each do |mission|
       @first_chart_array = search_and_add_completed(@first_chart_array, mission.end_time.strftime('%B'))
     end
@@ -64,13 +62,13 @@ class StudentsController < ApplicationController
     @second_chart_array = [
         ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]
     ]
-
     @missions_upcoming.each do |mission|
       @second_chart_array = search_and_add_upcoming(@second_chart_array, mission.end_time.strftime('%B'))
     end
 
     @total_revenu = []
     @sum = 0
+
     @first_chart_array.each do |element|
       @total_revenu << element[1]
     end

@@ -12,12 +12,13 @@
 
   </head>
   <body>
+    <%= javascript_pack_tag 'application' %>
+
     <%= render 'shared/navbar' unless @disable_nav %>
     <%= render 'shared/tabs' unless @disable_nav %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%#= stylesheet_pack_tag "map" %>
-    <%= javascript_pack_tag 'application' %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag "map" %>

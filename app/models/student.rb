@@ -107,6 +107,13 @@ class Student < ApplicationRecord
     return count
   end
 
+  def working_days
+    count = 0
+    availabilities.each do |availability|
+      count += ((availability.end_date - availability.start_date)/ 86400)
+    end
+    count.round(0)
+  end
 
   def search_and_add_upcoming(month)
       array = ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]

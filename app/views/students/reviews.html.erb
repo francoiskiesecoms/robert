@@ -34,25 +34,33 @@
          <div class="divider"></div>
         <div class="comments">
           <h6> General comment</h6>
-          <p><%= fit.mission.review_comment %></p>
+          <% unless fit.mission.review_comment.nil? %>
+            <p><%= fit.mission.review_comment %></p>
+          <%end%>
         </div>
         <div class="ponctuality">
           <h6> Ponctuality</h6>
-           <% fit.mission.review_ponctuality.times do  %>
-            <i class="fas fa-star"></i>
+          <% unless fit.mission.review_ponctuality.nil? %>
+             <% fit.mission.review_ponctuality.times do  %>
+              <i class="fas fa-star"></i>
+            <%end%>
           <%end%>
         </div>
         <div class="communication">
           <h6> Communication</h6>
-           <% fit.mission.review_communication.times do  %>
-            <i class="fas fa-star"></i>
-          <%end%>
+            <% unless fit.mission.review_communication.nil? %>
+              <% fit.mission.review_communication.times do  %>
+              <i class="fas fa-star"></i>
+              <%end%>
+            <%end%>
 
         </div>
         <div class="satisfaction">
           <h6> Satisfaction></h6>
-           <% fit.mission.review_satisfaction.times do  %>
-            <i class="fas fa-star"></i>
+            <% unless fit.mission.review_satisfaction.nil? %>
+             <% fit.mission.review_satisfaction.times do  %>
+              <i class="fas fa-star"></i>
+            <%end%>
           <%end%>
         </div>
       </div>

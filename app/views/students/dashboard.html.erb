@@ -13,13 +13,23 @@
     <p>...</p>
     </div>
     <div class="facilities">
-    <p>...</p>
+        <div class="card-facility-container">
+          <div class="card-facility">
+            <div class="card-facility-header" style="background-image: url('http://www.clicpromotion.com/Application/upload/1489392141.jpg')">
+              <span class="card-facility-filter"></span>
+            </div>
+            <div class="card-facility-body">
+              <h4><%=   @student.favorite_facilities.last.facility.name%></h4>
+              <p> City </p>
+            </div>
+          </div>
+        </div>
     </div>
     <div class="title_2">
       <h2> Earnings and Activity </h2>
     </div>
     <div class="earnings">
-    <p>...</p>
+    <p><%= pie_chart({"Earned" => @sum_received, "Upcoming" => @sum_not_received}, donut: true, height: "auto", width: "auto", legend: "left") %></p>
     </div>
     <div class="jobs">
     <p>...</p>

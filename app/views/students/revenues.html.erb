@@ -2,8 +2,8 @@
   <div class="page_container">
     <div class="row">
       <div class="col-xs-12-col-sm-6-col-sm-offset-6">
-        <h4 style="text-align: center; front-size:25px;">Benefit income for 2018</h4>
-            <p style="text-align: left; front-size:10px;">
+        <h2 style="text-align: center; font-size: 30px; font-weight: bolder;margin-bottom: 20px;">Benefit income for 2018</h2>
+            <p style="text-align: left; margin-bottom: 5px;font-weight: bold;">
             <% if @sum == 0 %>No revenue yet<%else%> <%= @sum %>$<%end%></p>
         <%= column_chart([{ name: 'Received', stack: 'stack1', data: @first_chart_array },{ name: 'TBR', stack: 'stack1', data: @second_chart_array}], stacked: true, height: "430px")%>
       </div>

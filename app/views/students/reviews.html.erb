@@ -2,20 +2,20 @@
 
     <div class="reviews" id = "flex">
       <div class="review-top">
-        <div class="flex" >
+        <h4>Global Evaluation</h4>
+        <div class="flex" style="justify-content: center">
           <% @student.evaluation.times do %>
             <i class="fas fa-star"></i>
           <%end%>
         </div>
-        <h4>Global evaluation</h4>
       </div>
       <div class="commentaires">
         <h4><%= @student.total_reviews %></h4>
-        <h4>Total reviews</h4>
+        <h4>Total Reviews</h4>
       </div>
       <div class="etoiles">
         <h4> <%= @student.top_reviews %> </h4>
-        <h4>stars reviews </h4>
+        <h4>Stars Reviews </h4>
       </div>
     </div>
 
@@ -24,32 +24,33 @@
       <div class="review" id= "border-bottom">
 
         <div class="summary">
-          <h4><strong> <%= fit.mission.senior.facility.name %></strong></h4>
-          <p> <%= fit.mission.schedule %> </p>
-          <p> <%= fit.mission.description %> </p>
+          <h4 style="letter-spacing: 2px; font-weight: 600"><strong> <%= fit.mission.senior.facility.name %></strong></h4>
+          <p style= "font-style: italic; font-weight: lighter"> <%= fit.mission.schedule %> </p>
+          <p style="margin-bottom: 10px"> <%= fit.mission.description %> </p>
           <% fit.mission.average_rating.times do  %>
             <i class="fas fa-star"></i>
           <%end%>
         </div>
+         <div class="divider"></div>
         <div class="comments">
-          <h5><strong> General comment </strong></h5>
+          <h6> General comment</h6>
           <p><%= fit.mission.review_comment %></p>
         </div>
         <div class="ponctuality">
-          <h5><strong> Ponctuality </strong></h5>
+          <h6> Ponctuality</h6>
            <% fit.mission.review_ponctuality.times do  %>
             <i class="fas fa-star"></i>
           <%end%>
         </div>
         <div class="communication">
-          <h5><strong> Communication</strong></h5>
+          <h6> Communication</h6>
            <% fit.mission.review_communication.times do  %>
             <i class="fas fa-star"></i>
           <%end%>
 
         </div>
         <div class="satisfaction">
-          <h5><strong> Satisfaction</strong></h5>
+          <h6> Satisfaction></h6>
            <% fit.mission.review_satisfaction.times do  %>
             <i class="fas fa-star"></i>
           <%end%>

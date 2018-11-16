@@ -11,7 +11,7 @@
 
             <% chosen = false %>
            <% end %>
-          <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id %>" style="<% if chosen %>background-color: red<% end %>">
+          <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id %>" style="<% if chosen %>box-shadow: 1px 1px 10px rgba(0,0,0,0.3)<% end %>">
             <%= link_to facility_remove_path(facility: facility.id), remote: true do %>
 
               <% if facility.photo %>
@@ -27,7 +27,6 @@
                 <div class="card-category"><%= Facility.name %></div>
                 <div class="card-description">
                   <h5><%= facility.address %></h5>
-                  <p><%= facility.description %></p>
                 </div>
               </div>
             </div>

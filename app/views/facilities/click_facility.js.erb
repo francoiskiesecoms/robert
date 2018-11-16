@@ -1,7 +1,7 @@
 <% if @facility %>
 
 alert("Facility added")
-document.getElementById('facility-<%= @facility.id %>').style.backgroundColor = "red"
+document.getElementById('facility-<%= @facility.id %>').style.boxShadow = "1px 1px 10px rgba(0,0,0,0.3)"
 
 
 <% else %>

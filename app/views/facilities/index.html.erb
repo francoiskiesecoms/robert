@@ -6,9 +6,7 @@
         <% @facilities.each do |facility|%>
           <% if @facility_chose.include?(facility.id) %>
             <% chosen = true %>
-
-           <% else %>
-
+          <% else %>
             <% chosen = false %>
            <% end %>
           <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id %>" style="<% if chosen %>box-shadow: 1px 1px 10px rgba(0,0,0,0.3)<% end %>">
@@ -21,12 +19,12 @@
               <% else %>
 
                <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url('https://cdn.someecards.com/posts/grandpa-grandson-birth-text-ok-pIq.png');margin-top: 10px; margin-bottom: 10px;">
+              url(facility.photo);margin-top: 10px; margin-bottom: 10px;">
 
               <% end %>
                 <div class="card-category"><%= Facility.name %></div>
                 <div class="card-description">
-                  <h5><%= facility.address %></h5>
+                  <p><%= facility.address %></p>
                 </div>
               </div>
             </div>
@@ -41,5 +39,4 @@
       data-markers="<%= @markers.to_json %>"
     ></div>
 </div>
-
 

@@ -1,21 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
+
+
+
+photo = []
+photo.push("https://g5-assets-cld-res.cloudinary.com/image/upload/q_auto,f_auto,fl_lossy/g5/g5-c-ivr2j426-pacifica-senior-living-client/g5-cl-1ggfaylaw7-pacifica-senior-living/uploads/pacifica-senior-living-lobby.jpg")
+photo.push("https://holyokeredevelopment.com/wp-content/uploads/senior-center-538x218.png")
+photo.push("http://www.carevium.com/wp-content/uploads/2014/02/brookdale-emeritus-senior-living.jpg")
+photo.push("http://cascadebusnews.com/wp-content/uploads/2016/11/Mt-Bachelor.jpg")
+photo.push("https://www.fivestarseniorliving.com/Libraries/FiveStar/Media/Williamsburg%20Villas/Knoxville,-TN,-Senior-Living_Carousel-(1).JPG?width=754&height=511&ext=.jpg")
+counter = 0
 5.times do
   user = User.create!(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')
-  facility = Facility.create!(address: Faker::Address.full_address, description: Faker::SiliconValley.motto, user: user, name: "Maison Marie Immaculée")
-
+  facility = Facility.create!(address: Faker::Address.full_address, description: Faker::SiliconValley.motto, user: user, name: Faker::Company.name, photo: photo[counter])
+  counter += 1
   5.times do
     senior = Senior.create!(name: Faker::Artist.name , age: 81 , description: "Cool grandpa", facility: facility)
-    mission = Mission.create!(start_time: Time.new(2018, 12, 20, 14, 30) , end_time: Time.new(2018, 12, 20, 18, 30), description: "Cinema with grandpa", senior: senior)
-    mission = Mission.create!(start_time: Time.new(2018, 12, 6, 14, 30) , end_time: Time.new(2018, 12, 8, 18, 30), description: "Cinema with grandpa", senior: senior)
-    mission = Mission.create!(start_time: Time.new(2018, 10, 18, 10, 30) , end_time: Time.new(2018, 10, 18, 13, 30), description: "Cinema with grandpa", senior: senior)
-    mission = Mission.create!(start_time: Time.new(2019, 1, 5, 10, 30) , end_time: Time.new(2019, 1, 5, 13, 30), description: "Cinema with grandpa", senior: senior)
+    mission = Mission.create!(start_time: Time.new(2018, 12, 20, 14, 30) , end_time: Time.new(2018, 12, 20, 18, 30), description: "Miryam would love to go to the cinema", senior: senior)
+    mission = Mission.create!(start_time: Time.new(2018, 12, 6, 14, 30) , end_time: Time.new(2018, 12, 8, 18, 30), description: "Lets grap some beers with Gertrude", senior: senior)
+    mission = Mission.create!(start_time: Time.new(2018, 10, 18, 10, 30) , end_time: Time.new(2018, 10, 18, 13, 30), description: "Alex needs help with groceries. Student has to be patient and beautiful", senior: senior)
+    mission = Mission.create!(start_time: Time.new(2019, 1, 5, 10, 30) , end_time: Time.new(2019, 1, 5, 13, 30), description: "Jacqueline needs help setting up netflix !! Thanks", senior: senior)
   end
 end
 

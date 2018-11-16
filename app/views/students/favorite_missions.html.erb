@@ -14,18 +14,22 @@
       <div class="mission">
         <div class="left">
           <div class="schedule">
-            <p><%= mission.schedule.split("from")[0] %></p>
-            <p><%= mission.schedule.split("from")[1] %></p>
+            <p class="date"><%= mission.schedule.split("from")[0] %></p>
+            <p class="time"><%= mission.schedule.split("from")[1] %></p>
           </div>
           <p></p>
         </div>
         <div class="center">
-          <p><%= mission.senior.facility.name%></p>
+          <p class="facility-name"><%= mission.senior.facility.name%></p>
           <p><%= mission.description %></p>
         </div>
         <div class="right">
-          <%= link_to "Accept", accept_fit_path(mission) , method: :post %>
-          <%= link_to "Refuse", refuse_fit_path(mission) , method: :post %>
+          <%= link_to accept_fit_path(mission) , method: :post do %>
+          <button type="button" class="btn btn-success">Accept</button>
+          <% end %>
+          <%= link_to refuse_fit_path(mission) , method: :post do %>
+          <button type="button" class="btn btn-danger">Decline</button>
+          <% end %>
         </div>
       </div>
     <% end %>

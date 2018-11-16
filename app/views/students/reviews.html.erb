@@ -1,0 +1,60 @@
+<div class="page_container">
+
+    <div class="reviews" id = "flex">
+      <div class="review-top">
+        <div class="flex" >
+          <% @student.evaluation.times do %>
+            <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+        <h4>Global evaluation</h4>
+      </div>
+      <div class="commentaires">
+        <h4><%= @student.total_reviews %></h4>
+        <h4>Total reviews</h4>
+      </div>
+      <div class="etoiles">
+        <h4> <%= @student.top_reviews %> </h4>
+        <h4>stars reviews </h4>
+      </div>
+    </div>
+
+  <div class="reviews">
+    <% @student.fits.each do |fit|%>
+      <div class="review" id= "border-bottom">
+
+        <div class="summary">
+          <h4><strong> <%= fit.mission.senior.facility.name %></strong></h4>
+          <p> <%= fit.mission.schedule %> </p>
+          <p> <%= fit.mission.description %> </p>
+          <% fit.mission.average_rating.times do  %>
+            <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+        <div class="comments">
+          <h5><strong> General comment </strong></h5>
+          <p><%= fit.mission.review_comment %></p>
+        </div>
+        <div class="ponctuality">
+          <h5><strong> Ponctuality </strong></h5>
+           <% fit.mission.review_ponctuality.times do  %>
+            <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+        <div class="communication">
+          <h5><strong> Communication</strong></h5>
+           <% fit.mission.review_communication.times do  %>
+            <i class="fas fa-star"></i>
+          <%end%>
+
+        </div>
+        <div class="satisfaction">
+          <h5><strong> Satisfaction</strong></h5>
+           <% fit.mission.review_satisfaction.times do  %>
+            <i class="fas fa-star"></i>
+          <%end%>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

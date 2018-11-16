@@ -77,4 +77,33 @@ class Student < ApplicationRecord
     end
     missions
   end
+
+  def evaluation
+    average = 0
+    fits.each do |fit|
+      average += (fit.mission.average_rating / fits.size)
+    end
+  average
+  end
+
+  def total_reviews
+    count = 0
+    fits.each do |fit|
+      unless fit.mission.average_rating.nil?
+        count += 1
+      end
+    end
+    return count
+  end
+
+  def top_reviews
+    count = 0
+    fits.each do |fit|
+      count += 1 if fit.mission.review_ponctuality == 5
+      count += 1 if fit.mission.review_satisfaction == 5
+      count += 1 if fit.mission.review_communication == 5
+    end
+    return count
+  end
+
 end

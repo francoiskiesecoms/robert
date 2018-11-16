@@ -76,7 +76,7 @@ class StudentsController < ApplicationController
   end
 
   def reviews
-
+    @student = Student.find_by(user_id: current_user.id)
   end
 
   private

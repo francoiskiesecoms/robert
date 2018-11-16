@@ -77,4 +77,72 @@ class Student < ApplicationRecord
     end
     missions
   end
+
+
+  def evaluation
+    average = 0
+    fits.each do |fit|
+      average += (fit.mission.average_rating / fits.size)
+    end
+  average
+  end
+
+  def total_reviews
+    count = 0
+    fits.each do |fit|
+      unless fit.mission.average_rating.nil?
+        count += 1
+      end
+    end
+    return count
+  end
+
+  def top_reviews
+    count = 0
+    fits.each do |fit|
+      count += 1 if fit.mission.review_ponctuality == 5
+      count += 1 if fit.mission.review_satisfaction == 5
+      count += 1 if fit.mission.review_communication == 5
+    end
+    return count
+  end
+
+
+  def search_and_add_upcoming(month)
+      array = ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]
+      array.each_with_index do |array2, i|
+            if array2[0] == month
+              revenue = 0
+                upcoming_missions.each do |mission|
+                  array[i] = [month, revenue += (mission.end_time.hour - mission.start_time.hour)*10]
+                end
+            end
+      end
+      array
+  end
+
+  def search_and_add_completed(month)
+     array = ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]
+      array.each_with_index do |array2, i|
+            if array2[0] == month
+              revenue = 0
+                completed_missions.each do |mission|
+                  array[i] = [month, revenue += (mission.end_time.hour - mission.start_time.hour)*10]
+                end
+            end
+      end
+      array
+  end
+
+  def sum_revenu(array)
+    total_revenu = []
+    sum = 0
+    array.each do |element|
+      total_revenu << element[1]
+    end
+    total_revenu.each do |e|
+      sum += e
+    end
+    sum
+  end
 end

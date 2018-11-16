@@ -1,5 +1,5 @@
 function initUpdateNavbarOnScroll() {
-  const navbar = document.querySelector('.navbar-homepage');
+  let navbar = document.querySelector('.navbar-homepage');
   console.log(navbar);
   if (navbar) {
     window.addEventListener('scroll', () => {

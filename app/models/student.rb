@@ -78,6 +78,36 @@ class Student < ApplicationRecord
     missions
   end
 
+
+  def evaluation
+    average = 0
+    fits.each do |fit|
+      average += (fit.mission.average_rating / fits.size)
+    end
+  average
+  end
+
+  def total_reviews
+    count = 0
+    fits.each do |fit|
+      unless fit.mission.average_rating.nil?
+        count += 1
+      end
+    end
+    return count
+  end
+
+  def top_reviews
+    count = 0
+    fits.each do |fit|
+      count += 1 if fit.mission.review_ponctuality == 5
+      count += 1 if fit.mission.review_satisfaction == 5
+      count += 1 if fit.mission.review_communication == 5
+    end
+    return count
+  end
+
+
   def search_and_add_upcoming(month)
       array = ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]
       array.each_with_index do |array2, i|

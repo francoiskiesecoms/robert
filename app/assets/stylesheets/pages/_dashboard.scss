@@ -1,65 +1,131 @@
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 28% 8% 28% 8% 28%;
+  grid-template-rows: 150px 8% 230px 8% 230px;
 }
-.dashboard .description {
+ .description {
   grid-row: 1 / span 1;
   grid-column: 1 / span 3;
 }
 
-.dashboard .title_1 {
+.description p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.title_1 {
   grid-row: 2 / span 1;
   grid-column: 1 / span 3;
-  h2 {
-    font-weight: lighter;
-    font-style: italic;
-  }
+  font-weight: lighter;
+  font-style: italic;
+
 }
 
-.dashboard .calendar {
+ .calendar {
   grid-row: 3 / span 1;
   grid-column: 1 / span 1;
 }
 
-.dashboard .reviews {
+ .reviews-dashboard {
   grid-row: 3 / span 1;
   grid-column: 2 / span 1;
 }
 
-.dashboard .facilities {
+ .facilities-dashboard {
   grid-row: 3 / span 1;
   grid-column: 3 / span 1;
 }
 
-.dashboard .title_2 {
+ .title_2 {
   grid-row: 4 / span 1;
   grid-column: 1 / span 3;
-  h2 {
-    font-weight: lighter;
-    font-style: italic;
-  }
+  font-weight: lighter;
+  font-style: italic;
+
 }
 
-.dashboard .earnings {
+ .earnings {
   grid-row: 5 / span 1;
   grid-column: 1 / span 1;
 }
 
-.dashboard .jobs {
+.jobs {
   grid-row: 5 / span 1;
   grid-column: 2 / span 1;
 }
 
-.dashboard .notifications {
+.notifications {
   grid-row: 5 / span 1;
   grid-column: 3 / span 1;
 }
 
-.description, .title_1, .calendar, .reviews, .facilities, .title_2, .earnings, .jobs, .notifications {
+.description, .calendar, .reviews-dashboard, .earnings, .jobs {
   background-color: white;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
-  padding: 20px;
-  margin: 20px 30px;
+  padding: 10px;
+  margin: 20px 15px;
 }
+
+.title_1, .title_2 {
+  margin-left: 15px;
+  padding-left: 10px;
+}
+
+#number {
+  font-size: 35px;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0px;
+}
+
+.padding-left {
+  padding-left:10px;
+}
+
+
+.body {
+  height: 100px;
+  background-color: red;
+  margin: 0px;
+}
+
+.facilities-dashboard {
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  margin: 20px 15px;
+}
+
+.jobs {
+  text-align: center;
+}
+
+// .chart {
+//   width: 200px;
+//   height: 200px;
+// }
+
+.notifications h4 {
+  background-color: white;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 0px;
+}
+
+.notifications {
+  margin: 20px 15px;
+  text-align: center;
+}
+
+#chart-1 {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+
+
+
+

@@ -1,37 +1,58 @@
-<div class="container">
+<div class="page_container">
   <div class="dashboard">
     <div class="description">
-      <p>...</p>
+      <p>Welcome to the <strong> community Robert & Romane </strong>. I hope you will enjoy every moment your spend with seniors.
+      Robert & Romame's mission is to promote intergenerational exchanges. You will be able to teach seniors technology,
+      help them with groceries or help them with any daily tasks. Do not hesitate to reach us if you have any question!
+      </p>
     </div>
-    <div class="title_1">
-      <h2> User's dashboard </h2>
-    </div>
-    <div class="calendar">
-    <p>...</p>
-    </div>
-    <div class="reviews">
-    <p>...</p>
-    </div>
-    <div class="facilities">
-      <p>
-      <% @student.favorite_facilities.each do |fav| %>
+    <h3 class="title_1"> <%=@student.name + "'s dashboard" %> </h3>
 
-        <ul><li><%= fav.facility.name %></li>
-        </ul>
-        <%end%>
-    </p>
+    <div class="calendar">
+      <h4>Your calendar</h4>
+      <div class="flex " id="center" >
+        <p class = "no-margin-bottom" id = "number"><%=@student.working_days.to_s %></p>
+        <p class=" no-margin-bottom  padding-left"> working days</p>
+        <i class="far fa-calendar-alt no-margin-bottom padding-left"></i>
+      </div>
+      <p><%= "You are available " + @student.working_days.to_s + " days to complete missions" %></p>
     </div>
-    <div class="title_2">
-      <h2> Earnings and Activity </h2>
+    <div class="reviews-dashboard">
+    <h4>Your reviews</h4>
+      <div class="flex " id="center" >
+        <p class = "no-margin-bottom" id = "number"><%=@student.top_reviews.to_s %></p>
+        <p class=" no-margin-bottom  padding-left"> top reviews </p>
+        <i class=" fas fa-star no-margin-bottom padding-left"></i>
+      </div>
+      <p><%= "You have " + @student.top_reviews.to_s + " top reviews (5 stars), good job!" %></p>
+
     </div>
-    <div class="earnings">
-    <p><%= pie_chart({"Earned" => @sum_received, "Upcoming" => @sum_not_received}, donut: true, height: "auto", width: "auto", legend: "left") %></p>
+    <div class="facilities-dashboard">
+      <div class="body">
+
+      </div>
+      <div class="footer">
+        <h4><%= @student.favorite_facilities.last.facility.name %></h4>
+      </div>
     </div>
+      <h3 class="title_2"> Earnings and Activity </h3>
+        <div class="earnings">
+        <!--           <div class ="chart"><%= pie_chart({"Earned" => @sum_received, "Upcoming" => @sum_not_received}, donut: true, legend: "left", width: "80px", height: "50px") %>
+          </div> -->
+        </div>
     <div class="jobs">
-    <p>...</p>
+      <div class="completed">
+        <p class = "no-margin-bottom" id = "number"><%=@student.completed_missions.size.to_s %></p>
+        <p>COMPLETED MISSIONS</p>
+
+      </div>
+      <div class="upcoming">
+        <p class = "no-margin-bottom" id = "number"><%=@student.upcoming_missions.size.to_s %></p>
+        <p>UPCOMING MISSIONS</p>
+      </div>
     </div>
-    <div class="notifications">
-    <p>...</p>
+    <div class="notifications" >
+    <h4>Notifications</h4>
     </div>
   </div>
 </div>

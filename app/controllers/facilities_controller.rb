@@ -11,8 +11,6 @@ class FacilitiesController < ApplicationController
       end
     end
 
-
-
     if params[:query].present?
       @facilities = Facility.search_by_address(params[:query])
     else

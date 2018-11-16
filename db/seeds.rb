@@ -1,4 +1,11 @@
-
+User.destroy_all
+Facility.destroy_all
+Senior.destroy_all
+Mission.destroy_all
+Student.destroy_all
+FavoriteFacility.destroy_all
+Availability.destroy_all
+Fit.destroy_all
 
 
 

@@ -82,7 +82,7 @@ class Student < ApplicationRecord
   def evaluation
     average = 0
     fits.each do |fit|
-      average += (fit.mission.average_rating / fits.size)
+      average += (fit.mission.average_rating / fits.size) unless average_rating.nil? || fits.nil?
     end
   average
   end

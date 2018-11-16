@@ -9,7 +9,7 @@ class Student < ApplicationRecord
   belongs_to :user
   has_many :favorite_facilities, dependent: :destroy
   has_many :availabilities, dependent: :destroy
-  has_many :missions, dependent: :destroy
+  has_many :missions
   has_many :fits
 
 

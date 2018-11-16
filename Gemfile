@@ -30,6 +30,8 @@ gem 'momentjs-rails', '>= 2.9'
 gem "highcharts-rails"
 gem "chartkick"
 gem 'groupdate'
+gem 'pusher'
+gem 'figaro'
 
 
 

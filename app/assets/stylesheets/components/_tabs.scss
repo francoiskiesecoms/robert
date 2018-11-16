@@ -3,6 +3,9 @@ ul#myTab {
   position: sticky;
   top: 0;
   box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
+  z-index: 300;
+  background-color: white;
+  position: relative;
 }
 li.nav-item a{
   height: 70px;
@@ -16,4 +19,19 @@ li.nav-item a{
 li.nav-item a:hover {
   opacity: 0.8;
   font-weight: 500;
+}
+#official-name {
+  font-family: "Andale Mono", "monospace";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 500;
+  font-size: 30px;
+  color: #0074D9;
+  font-weight: 700;
+  font-variant: small-caps;
+}
+#official-name a:hover {
+  text-decoration: none;
+  opacity: 0.6;
 }

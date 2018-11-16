@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default sidebar" role="navigation">
+<nav class="navbar navbar-default   sidebar" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1" aria-expanded="false">
@@ -14,24 +14,24 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Account <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
-            <li><a href="#">My Profile</a></li>
+            <li><%= link_to "My Profile",  profile_path %></li>
             <li class="divider"></li>
-            <li><a href="#">Facilities</a></li>
+            <li><%= link_to "Facilities", dashboard_facilities_path %></li>
             <li class="divider"></li>
             <li><a href="#">Billing</a></li>
             <li class="divider"></li>
-            <li><a href="#">Formation</a></li>
+            <li><%= link_to "Formation", training_path %></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Progression <span class="caret"></span><span style="font-size:20px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-euro"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
             <li>
-              <a href="#">Evaluation</a>
+              <%= link_to "Evaluation", reviews_path %>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#">Earnings</a>
+              <%= link_to "Earnings", revenues_path %>
             </li>
           </ul>
         </li>

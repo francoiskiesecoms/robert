@@ -28,6 +28,15 @@ h4 {
   padding-right: 15px;
 }
 
+h4 a{
+  color: #777;
+  opacity: 0.8;
+}
+h4 a:hover{
+  text-decoration: none;
+  color: black;
+  opacity: 0.8;
+}
 .left {
   flex: 0 0 20%;
 

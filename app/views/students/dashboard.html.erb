@@ -29,8 +29,7 @@
 
     </div>
     <div class="facilities-dashboard">
-      <div class="body">
-
+      <div class="body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url(<%= @student.favorite_facilities.last.facility.photo %>); background-size:cover;">
       </div>
       <div class="footer">
         <h4><%= @student.favorite_facilities.last.facility.name %></h4>

@@ -13,7 +13,7 @@ end
 
 def average_rating
   if review_ponctuality.nil? || review_communication.nil? || review_satisfaction.nil?
-    return nil
+    return 0
   else
     return (review_ponctuality + review_communication + review_satisfaction) / 3
   end

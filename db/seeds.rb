@@ -7,7 +7,7 @@ photo.push("https://g5-assets-cld-res.cloudinary.com/image/upload/q_auto,f_auto,
 photo.push("https://holyokeredevelopment.com/wp-content/uploads/senior-center-538x218.png")
 photo.push("http://www.carevium.com/wp-content/uploads/2014/02/brookdale-emeritus-senior-living.jpg")
 photo.push("http://cascadebusnews.com/wp-content/uploads/2016/11/Mt-Bachelor.jpg")
-photo.push("https://www.fivestarseniorliving.com/Libraries/FiveStar/Media/Williamsburg%20Villas/Knoxville,-TN,-Senior-Living_Carousel-(1).JPG?width=754&height=511&ext=.jpg")
+photo.push("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVPG07ZliJbPukU6nxz6P4iuTum_7kmhyRdqxszN95dj-3ukz")
 counter = 0
 5.times do
   user = User.create!(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')

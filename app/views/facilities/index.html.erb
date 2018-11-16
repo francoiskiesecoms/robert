@@ -13,13 +13,13 @@
             <%= link_to facility_remove_path(facility: facility.id), remote: true do %>
 
               <% if facility.photo %>
-                <div class="card card-facility" data-target="facility-<%= facility.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-                 url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
+               <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+              url(<%= facility.photo%>);margin-top: 10px; margin-bottom: 10px;">
 
               <% else %>
 
-               <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url(facility.photo);margin-top: 10px; margin-bottom: 10px;">
+                <div class="card card-facility" data-target="facility-<%= facility.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+                 url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
 
               <% end %>
                 <div class="card-category"><%= Facility.name %></div>

@@ -1,6 +1,3 @@
-import "bootstrap";
-import { initUpdateNavbarOnScroll } from '../components/navbar';
-initUpdateNavbarOnScroll();
 import Chartkick from "chartkick"
 window.Chartkick = Chartkick;
 

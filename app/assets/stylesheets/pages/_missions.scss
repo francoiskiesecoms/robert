@@ -10,6 +10,7 @@
 }
 
 .mission {
+  position: relative;
   display: flex;
   background-color: white;
   margin-top: 20px;
@@ -43,4 +44,22 @@ h4 {
   margin-left: 15px;
 }
 
+.schedule {
+  text-align: center;
+}
 
+.date {
+  letter-spacing: 2px;
+}
+
+.time{
+  font-style: italic;
+  font-weight: lighter;
+}
+.facility-name {
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.right {
+  margin-top: 25px;
+}

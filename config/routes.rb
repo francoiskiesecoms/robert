@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   get 'dashboard/revenues', to:'students#revenues', as: :revenues
   #reviews
-  get 'dashboard/reviews', to: "students#reviews"
+  get 'dashboard/reviews', to: "students#reviews", as: :reviews
 
   get 'facility_add', to: "facilities#click_facility"
   get 'facility_remove', to: "facilities#click_remove"

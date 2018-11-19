@@ -39,5 +39,9 @@ Rails.application.routes.draw do
 
   post 'missions/:id/accept', to: "fits#accept", as: :accept_fit
   post 'missions/:id/refuse', to: "fits#refuse", as: :refuse_fit
+
+  post 'chat_rooms/:chat_room_id/messages', to: "messages#create", as: :chat_room_messages
+
+  get 'dashboard/chat', to: "students#chat", as: :chat
 end
 

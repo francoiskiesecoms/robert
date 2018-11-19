@@ -1,3 +1,15 @@
+h3 {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-variant: small-caps;
+  color: $blue;
+}
+h4 {
+  font-weight: 500;
+  font-variant: small-caps;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -9,16 +21,15 @@
 }
 
 .description p {
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 16px;
+  text-align: justify;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .title_1 {
   grid-row: 2 / span 1;
   grid-column: 1 / span 3;
-  font-weight: lighter;
-  font-style: italic;
-
 }
 
  .calendar {
@@ -39,9 +50,6 @@
  .title_2 {
   grid-row: 4 / span 1;
   grid-column: 1 / span 3;
-  font-weight: lighter;
-  font-style: italic;
-
 }
 
  .earnings {

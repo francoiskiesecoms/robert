@@ -23,11 +23,11 @@ class StudentsController < ApplicationController
         @first_chart_array = [['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]]
       else
         @student.completed_missions.each do |mission|
-          @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'))
+          @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'), 2018)
         end
       end
       @student.upcoming_missions.each do |mission|
-        @second_chart_array = @student.search_and_add_upcoming(mission.end_time.strftime('%B'))
+        @second_chart_array = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2019)
       end
       @sum_received = @student.sum_revenu(@first_chart_array)
       @sum_not_received = @student.sum_revenu(@second_chart_array)
@@ -80,15 +80,13 @@ class StudentsController < ApplicationController
        @second_chart_array_2019 = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2019)
       end
     end
-    @sum_2018 = @student.sum_revenu(@first_chart_array)
-    @sum_2019 = @student.sum_revenu(@first_chart_array_2019)
+    @sum_2018 = @student.sum_revenue
+    @sum_2019 = @student.sum_revenue
   end
 
   def reviews
     @student = Student.find_by(user_id: current_user.id)
   end
-
-
 
   private
 

@@ -146,11 +146,23 @@ class Student < ApplicationRecord
   def sum_revenu(array)
     total_revenu = []
     sum = 0
-    array.each do |element|
-      total_revenu << element[1]
+    unless array.nil?
+      array.each do |element|
+        total_revenu << element[1]
+      end
+      total_revenu.each do |e|
+        sum += e
+      end
     end
-    total_revenu.each do |e|
-      sum += e
+    sum
+  end
+
+    def revenue
+    sum = 0
+    unless fits == []
+      fits.each do |fit|
+        sum += fit.mission.payout
+      end
     end
     sum
   end

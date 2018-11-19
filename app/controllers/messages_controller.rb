@@ -3,7 +3,7 @@ def create
   @message = Message.new(message_params)
   @chat_room = ChatRoom.find(params[:chat_room_id])
   @message.chat_room = @chat_room
-  @message.student = Student.find_by(user: current_user)
+  @message.save
   # if @message.save
   #   ActionCable.server.broadcast("chat_room_#{@chat_room.id}",{
   #     message: @message.to_json

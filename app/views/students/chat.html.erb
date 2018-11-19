@@ -12,6 +12,7 @@
       <div id="create-message">
         <%= simple_form_for [@student.chat_rooms.last, Message.new], remote: true do |f| %>
         <%= f.input :content, label: false %>
+        <%= f.button :submit%>
         <%end%>
       </div>
     </div>

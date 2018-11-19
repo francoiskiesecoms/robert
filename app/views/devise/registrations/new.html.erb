@@ -9,7 +9,8 @@
 
             <div class="form-inputs">
               <div class="form-group">
-              <%= f.input :student, as: :boolean %>
+              <!-- <%= f.input :student, as: :boolean %> -->
+               <%= f.hidden_field :student, value: true %>
 
               <%= f.input :name,
                           required: true,

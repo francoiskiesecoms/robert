@@ -86,8 +86,8 @@ class StudentsController < ApplicationController
        @second_chart_array_2019 = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2019)
       end
     end
-    @sum_2018 = @student.sum_revenue
-    @sum_2019 = @student.sum_revenue
+    @sum_2018 = @student.revenue
+    @sum_2019 = @student.revenue
   end
 
   def reviews

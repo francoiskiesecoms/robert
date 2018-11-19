@@ -9,8 +9,8 @@ class User < ApplicationRecord
   def assign_role
     if student
       Student.create!(email: email, user: self, name: name)
-    else
-      Facility.create!(email:email, user: self)
+    # else
+    #   Facility.create!(email:email, user: self)
     end
   end
 

@@ -54,6 +54,11 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfYJeMqKlqE-TWE3NnuKapsM9Oo2rrYMbKt5vgMUCwyeDxdx75" alt="Google Play logo">
           </a>
         </li>
+        <li class="log_out">
+      <%= link_to destroy_user_session_path, method: :delete, class: "navbar-homepage-item navbar-homepage-link" do %>
+        Sign out <span style="font-size:20px" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span>
+        <% end %>
+      </li>
       </ul>
     </div>
   </div>

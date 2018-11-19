@@ -29,7 +29,7 @@
           <% end %>
 
           <%= link_to refuse_fit_path(mission) , method: :post, remote: true do %>
-          <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sms">Decline</button>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sms">Decline</button>
           <% end %>
         </div>
       </div>
@@ -41,15 +41,18 @@
                 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm">
                   <div class="modal-body">
-                    Mission accepted
+                    You have just accepted the mission !
                   </div>
+                  <%= link_to "Ok", dashboard_missions_upcoming_path, class: "ok_button" %>
                 </div>
               </div>
 
                <div class="modal fade bd-example-modal-sms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm">
                   <div class="modal-body">
-                    Mission declined
+                    You have just declined the mission !
                   </div>
+                   <%= link_to "Ok", dashboard_missions_path, class: "ok_button" %>
                 </div>
+                <button>Ok</button>
               </div>

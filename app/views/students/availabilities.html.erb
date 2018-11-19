@@ -72,12 +72,12 @@
 
         <div class="form-group">
           <%= f.label :start_date %>
-          <%= f.text_field :start_date, :data => {:provide => "datepicker"} , class: 'form-control' %>
+          <%= f.text_field :start_date, :data => {:provide => "datepicker"} , class: 'date-picker form-control' %>
         </div>
 
         <div class="form-group">
           <%= f.label :end_date %>
-          <%= f.text_field :end_date, :data => {:provide => "datepicker"}, class: 'form-control'  %>
+          <%= f.text_field :end_date, :data => {:provide => "datepicker"}, class: 'date-picker form-control'  %>
         </div>
           <%= f.submit "Add availibility", class: "btn btn-primary" %>
       <% end %>
@@ -96,3 +96,6 @@
 </div>
 
 
+<script>
+
+</script>

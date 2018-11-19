@@ -63,15 +63,25 @@ class StudentsController < ApplicationController
 
     if @student.completed_missions.empty?
       @first_chart_array = [['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]]
+      @first_chart_array_2019 = [['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]]
     else
       @student.completed_missions.each do |mission|
+        if mission.end_time.year == 2018
         @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'))
+        else
+        @first_chart_array_2019 = @student.search_and_add_completed(mission.end_time.strftime('%B'))
+        end
       end
     end
     @student.upcoming_missions.each do |mission|
-      @second_chart_array = @student.search_and_add_upcoming(mission.end_time.strftime('%B'))
+      if mission.end_time.year == 2018
+       @second_chart_array = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2018)
+      else
+       @second_chart_array_2019 = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2019)
+      end
     end
-    @sum = @student.sum_revenu(@first_chart_array)
+    @sum_2018 = @student.sum_revenu(@first_chart_array)
+    @sum_2019 = @student.sum_revenu(@first_chart_array_2019)
   end
 
   def reviews

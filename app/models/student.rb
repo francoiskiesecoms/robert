@@ -11,6 +11,8 @@ class Student < ApplicationRecord
   has_many :availabilities, dependent: :destroy
   has_many :missions
   has_many :fits
+  has_many :chat_rooms
+  has_many :messages, through: :chat_rooms
 
 
   def refused_missions

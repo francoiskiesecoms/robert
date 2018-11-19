@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_134823) do
+
+ActiveRecord::Schema.define(version: 2018_11_19_141060) do
+
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +33,15 @@ ActiveRecord::Schema.define(version: 2018_11_19_134823) do
     t.boolean "saturday", default: true
     t.boolean "sunday", default: true
     t.index ["student_id"], name: "index_availabilities_on_student_id"
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "facility_id"
+    t.bigint "student_id"
+    t.index ["facility_id"], name: "index_chat_rooms_on_facility_id"
+    t.index ["student_id"], name: "index_chat_rooms_on_student_id"
   end
 
   create_table "facilities", force: :cascade do |t|
@@ -62,6 +75,15 @@ ActiveRecord::Schema.define(version: 2018_11_19_134823) do
     t.boolean "refused", default: false
     t.index ["mission_id"], name: "index_fits_on_mission_id"
     t.index ["student_id"], name: "index_fits_on_student_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "content"
+    t.bigint "chat_room_id"
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
   end
 
   create_table "missions", force: :cascade do |t|
@@ -119,10 +141,13 @@ ActiveRecord::Schema.define(version: 2018_11_19_134823) do
   end
 
   add_foreign_key "availabilities", "students"
+  add_foreign_key "chat_rooms", "facilities"
+  add_foreign_key "chat_rooms", "students"
   add_foreign_key "facilities", "users"
   add_foreign_key "favorite_facilities", "facilities"
   add_foreign_key "favorite_facilities", "students"
   add_foreign_key "fits", "students"
+  add_foreign_key "messages", "chat_rooms"
   add_foreign_key "missions", "seniors"
   add_foreign_key "seniors", "facilities"
   add_foreign_key "students", "users"

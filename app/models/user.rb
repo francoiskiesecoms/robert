@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :messages, dependent: :destroy
+
+
   after_create :assign_role
 
   def assign_role
@@ -13,6 +16,7 @@ class User < ApplicationRecord
     #   Facility.create!(email:email, user: self)
     end
   end
+
 
 end
 

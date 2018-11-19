@@ -67,9 +67,9 @@ class StudentsController < ApplicationController
     else
       @student.completed_missions.each do |mission|
         if mission.end_time.year == 2018
-        @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'))
+        @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'), 2018)
         else
-        @first_chart_array_2019 = @student.search_and_add_completed(mission.end_time.strftime('%B'))
+        @first_chart_array_2019 = @student.search_and_add_completed(mission.end_time.strftime('%B'), 2019)
         end
       end
     end

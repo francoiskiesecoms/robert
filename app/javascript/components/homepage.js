@@ -1,3 +1,9 @@
-$('#myCarousel').carousel({
-    pause: 'none'
-  })
+$(document).ready(function(){
+  $('#myCarousel').carousel();
+  $("#carou_gauche").click(function(){
+      $("#myCarousel").carousel("prev");
+    });
+  $("#carou_droit").click(function(){
+      $("#myCarousel").carousel("next");
+    });
+});

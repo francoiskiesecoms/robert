@@ -118,25 +118,27 @@ class Student < ApplicationRecord
   def search_and_add_upcoming(month, year)
       array = ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]
       array.each_with_index do |array2, i|
-            if array2[0] == month
-              revenue = 0
-                upcoming_missions.each do |mission|
-                  if mission.end_time.year == year
-                    array[i] = [month, revenue += (mission.end_time.hour - mission.start_time.hour)*10]
-                  end
+          if array2[0] == month
+          revenue = 0
+          upcoming_missions.each do |mission|
+                if mission.end_time.year == year
+                  array[i] = [month, revenue += (mission.end_time.hour - mission.start_time.hour)*10]
                 end
+              end
             end
       end
       array
   end
 
-  def search_and_add_completed(month)
+  def search_and_add_completed(month, year)
      array = ['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]
       array.each_with_index do |array2, i|
             if array2[0] == month
               revenue = 0
                 completed_missions.each do |mission|
-                  array[i] = [month, revenue += (mission.end_time.hour - mission.start_time.hour)*10]
+                  if mission.end_time.year == year
+                    array[i] = [month, revenue += (mission.end_time.hour - mission.start_time.hour)*10]
+                  end
                 end
             end
       end

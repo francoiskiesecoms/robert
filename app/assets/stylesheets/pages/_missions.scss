@@ -72,3 +72,32 @@ h4 a:hover{
 .right {
   margin-top: 25px;
 }
+.modal-body {
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  align-items: center;
+  color: $blue;
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0,0,0,0.6);
+  position: relative;
+}
+.ok_button {
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: 1px solid $blue;
+  color: $blue;
+  width: 100px;
+  text-align: center;
+}
+.ok_button:hover {
+  text-decoration: none;
+  background-color: $blue;
+  color: white;
+}
+

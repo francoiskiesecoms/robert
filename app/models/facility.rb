@@ -2,7 +2,7 @@ class Facility < ApplicationRecord
   belongs_to :user
   # mount_uploader :photo, PhotoUploader
 
-  validates :address, presence: true, uniqueness: true
+  # validates :address, presence: true, uniqueness: true
 
   has_many :favorite_facilities, dependent: :destroy
   has_many :seniors, dependent: :destroy

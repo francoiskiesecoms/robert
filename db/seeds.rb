@@ -20,7 +20,7 @@ photo.push("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVPG07ZliJbPu
 counter = 0
 5.times do
   user = User.create!(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')
-  facility = Facility.create!(address: Faker::Address.full_address, description: Faker::SiliconValley.motto, user: user, name: Faker::Company.name, photo: photo[counter])
+  facility = Facility.create!(address: Faker::Address.full_address, description: Faker::SiliconValley.motto, user: user, name: Faker::Company.name, photo: photo[counter], email:Faker::Internet.email )
   counter += 1
   5.times do
     senior = Senior.create!(name: Faker::Artist.name , age: 81 , description: "Cool grandpa", facility: facility)

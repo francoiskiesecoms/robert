@@ -119,10 +119,15 @@ section{
 .dropdown-toggle {
   margin-top: 5px;
   margin-bottom: 5px;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 .dropdown-menu >li>a {
   margin: 15px;
   font-weight: lighter;
+  font-variant: small-caps;
+  letter-spacing: 2px;
 }
 .active a{
   height: 70px;
@@ -140,6 +145,20 @@ section{
   margin: 0px;
 }
 .tech {
+  font-variant: small-caps;
+  letter-spacing: 2px;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-weight: 600;
+}
+.log_out {
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  :hover {
+    opacity: 0.8;
+  }
 }

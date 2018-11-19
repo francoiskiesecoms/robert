@@ -19,19 +19,26 @@ class StudentsController < ApplicationController
   def dashboard
     @student = Student.find_by(user_id: current_user.id)
 
-      if @student.completed_missions.empty?
-        @first_chart_array = [['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]]
-      else
-        @student.completed_missions.each do |mission|
-          @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'), 2018)
+
+     if @student.completed_missions.empty?
+      @first_chart_array = [['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]]
+      @first_chart_array_2019 = [['January', 0],['February', 0 ],['Mars',0],['April', 0],['May', 0],['June', 0],['Jully', 0],['August', 0],['September', 0],['October', 0],['November', 0],['December', 0 ]]
+    else
+      @student.completed_missions.each do |mission|
+        if mission.end_time.year == 2018
+        @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'), 2018)
+        else
+        @first_chart_array_2019 = @student.search_and_add_completed(mission.end_time.strftime('%B'), 2019)
         end
       end
-      @student.upcoming_missions.each do |mission|
-        @second_chart_array = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2019)
+    end
+    @student.upcoming_missions.each do |mission|
+      if mission.end_time.year == 2018
+       @second_chart_array = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2018)
+      else
+       @second_chart_array_2019 = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2019)
       end
-      @sum_received = @student.sum_revenu(@first_chart_array)
-      @sum_not_received = @student.sum_revenu(@second_chart_array)
-
+    end
   end
 
   def profile
@@ -57,7 +64,6 @@ class StudentsController < ApplicationController
     @availability = Availability.new
   end
 
-
   def revenues
     @student = Student.find_by(user_id: current_user.id)
 
@@ -67,9 +73,9 @@ class StudentsController < ApplicationController
     else
       @student.completed_missions.each do |mission|
         if mission.end_time.year == 2018
-        @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'))
+        @first_chart_array = @student.search_and_add_completed(mission.end_time.strftime('%B'), 2018)
         else
-        @first_chart_array_2019 = @student.search_and_add_completed(mission.end_time.strftime('%B'))
+        @first_chart_array_2019 = @student.search_and_add_completed(mission.end_time.strftime('%B'), 2019)
         end
       end
     end

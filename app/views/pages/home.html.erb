@@ -14,7 +14,7 @@
 <div class="banner-homepage" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://491ypr3hsc9g2jh56v8e5wwm-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/woman-reading-to-the-elder-man-in-the-park-PGBJ6VR.jpg);">
   <div class="banner-homepage-content">
     <h1>Robert & Romane</h1>
-    <p>Quality moments shared between students & elderlies </p>
+    <p>R&R takes a different approach on aging by connecting seniors to fun and energetic college students </p>
     <%= link_to "Apply now !",new_user_session_path, class: "apply-now"%>
   </div>
 </div>
@@ -22,7 +22,7 @@
 <div class="wrapper">
   <div class="container">
     <h1 style="text-align: center"> <strong>Join the Robert & Romane's community</strong></h1>
-    <p style="text-align: center; font-size: 25px"> and earn money on your own schedule </p>
+    <p style="text-align: center; font-size: 25px;">... and earn money on your own schedule ! </p>
     <div class="row">
       <div class="col-xs-12 col-md-4">
         <div class="card-added-value">
@@ -52,7 +52,7 @@
 
 <div class="wrapper">
   <div class="container" >
-    <h1 style="text-align: center"> <strong>Services you will provide as an R&R's member</strong></h1>
+    <h1 style="text-align: center; margin-bottom: 40px" > <strong>Services you will provide as an R&R's member</strong></h1>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -74,7 +74,7 @@
                 <p>Teach our senior members how to use a smartphone, computer, tablet and social media.</p>
               </div>
             </div>
-            <div class="item" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url(http://www.adp-annecy.fr/images/illustration1.jpg)">
+            <div class="item" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url(https://img.aws.la-croix.com/2015/12/08/1390151/L-association-Donner-recevoir-propose-donner-temps-personnes-agees-Ehpad_0_730_400.jpg)">
               <div class="carousel-caption d-none d-md-block">
                 <h5><strong> Companionship </strong></h5>
                 <p>Spend time with our senior members. Take them out to lunch, to the movies or just hang out.</p>
@@ -93,30 +93,15 @@
               </div>
             </div>
           </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <a class="left carousel-control" id="carou_gauche" href="#myCarousel" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true">    </span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <a class="right carousel-control" id="carou_droit" href="#myCarousel" role="button" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"> </span>
           <span class="sr-only">Next</span>
         </a>
       </div>
-  </div>
-</div>
-
-<div class="wrapper" style="background-image:linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url(http://www.aobora.com/wp-content/uploads/accompagner-personne-agee.png)">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <div class="card-speciality">
-           <h2 style="text-align: center"> <strong> Two Generations</strong></h2>
-           <h3 style="text-align: center">A magical Experience </h3>
-           <p style="text-align: center"> Robert&Romane's take a different approach on aging by connecting seniors to fun and energetic college students </p>
-           <%= link_to "Apply now !",new_user_session_path, class: "apply-now"%>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -143,15 +128,14 @@
         </div>
       </div>
       </div>
+      <a href="#" class="show-more">Show more testimonials</a>
     </div>
   </div>
-  <a href="#" class="show-more">Show more testimonials</a>
-</div>
 
 <div class="wrapper">
   <h1 style="text-align: center"> <strong>They hired our students</strong></h1>
   <div class="container">
-    <div class="row">
+    <div class="row" style = "margin-bottom: 50px">
       <div class="col-xs-6 col-sm-4">
         <div class="card-facility-container">
           <div class="card-facility">
@@ -192,13 +176,13 @@
         </div>
       </div>
     </div>
+    <%= link_to "Show more facilities", dashboard_facilities_path, class: "show-more" %>>
   </div>
-  <%= link_to "Show more facilities", dashboard_facilities_path, class: "show-more" %>>
 </div>
 
 <div class="wrapper">
+  <div class="divider"></div>
   <div class="container">
-    <div class="divider"></div>
       <div class="footer">
         <div class="footer-section">
           <h3> Contact us</h3>

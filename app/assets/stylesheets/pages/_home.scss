@@ -1,3 +1,14 @@
+h1 {
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px rgba(0,0,0,0.3);
+  font-variant: small-caps;
+}
+.wrapper {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 .navbar-homepage {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   background-color: transparent;
@@ -20,10 +31,15 @@
   background-color: white;
   z-index: 1000 !important;
   .navbar-homepage-link {
-    color: #0074D9;
+    color: $blue;
     font-size: 20px;
   }
 }
+.navbar-homepage-link:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+
 .navbar-homepage-brand img {
   height: 50px;
   border-radius: 50%;
@@ -38,14 +54,8 @@
   padding: 0 20px;
   font-weight: bold;
 }
-.navbar-homepage-link {
-  color: #0074D9;
-  font-size: 20px;
-}
-.navbar-homepage-link:hover {
-  color: #da552f;
-  text-decoration: none;
-}
+
+
 
 .banner-homepage {
   color: white;
@@ -77,7 +87,7 @@
   border-radius: 4px;
   font-weight: bold;
   font-size: 20px;
-  background: #6AD58B;
+  background: $green;
   transition: background 0.3s ease;
   display: flex;
   align-items: center;
@@ -88,9 +98,10 @@
 }
 .apply-now:hover {
   opacity: 1;
-  background: #3ac162;
+  background: white;
   text-decoration: none;
-  color: white;
+  color: $green;
+  border: 1px solid $green;
 }
 
 .container {
@@ -105,12 +116,15 @@
 .card-added-value i{
   display: block;
   color: #0074D9;
+  opacity: 1;
 }
 .card-added-value h3 {
-  color: #0074D9;
+  color: $blue;
+  font-variant: small-caps;
+  letter-spacing: 2px;
 }
 .card-added-value p {
-  color: #868484;
+  opacity: 0.8;
   font-size: 20px;
 }
 
@@ -130,36 +144,27 @@
 }
 .carousel-caption {
   color: white !important;
+  opacity: 0.8;
   z-index: -1;
-  bottom: 70px;
+  bottom: 30px;
+  justify-content: center;
 }
 .carousel-caption h5{
   font-size: 40px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  padding: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-variant: small-caps;
 }
 .carousel-caption p{
   font-size: 25px;
-  font-weight: lighter;
+  font-weight: 300;
 }
-.card-speciality {
-  color: rgb(255, 255, 255);
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+#carou_droit{
+    margin-right: 0px !important;
+    margin-top: 0px !important;
 }
-.card-speciality a{
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-speciality p {
-  font-weight: lighter;
-  padding: 15px;
-}
-.wrapper {
-  background-size: cover;
+#carou_gauche {
+  z-index: 300 !important;
 }
 
 .card-testimonial {
@@ -199,7 +204,8 @@
   text-decoration: none;
 }
 .show-more:hover {
-  opacity: 1;
+  color: #f8f8f8;
+  background-color: #7c7c7c;
   text-decoration: none;
 }
 .card-facility-container {

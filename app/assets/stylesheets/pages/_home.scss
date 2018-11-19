@@ -132,7 +132,6 @@ h1 {
 .carousel-inner {
   width:100%;
   height:500px;
-  z-index:-2;
   overflow:hidden;
 }
 .item {
@@ -140,7 +139,6 @@ h1 {
   height:100%;
   background-position: center;
   background-size: cover;
-  z-index:-2;
 }
 .carousel-caption {
   color: white !important;
@@ -160,11 +158,14 @@ h1 {
   font-weight: 300;
 }
 #carou_droit{
-    margin-right: 0px !important;
-    margin-top: 0px !important;
+  margin-right: 0px !important;
+  margin-top: 0px !important;
+  z-index: 50 !important;
 }
 #carou_gauche {
-  z-index: 300 !important;
+  margin-right: 0px !important;
+  margin-top: 0px !important;
+  z-index: 50 !important;
 }
 
 .card-testimonial {

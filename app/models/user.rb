@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :messages, dependent: :destroy
-
+  has_many :chat_rooms, through: :messages
 
   after_create :assign_role
 

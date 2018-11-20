@@ -3,6 +3,7 @@ def create
   @message = Message.new(message_params)
   @chat_room = ChatRoom.find(params[:chat_room_id])
   @message.chat_room = @chat_room
+  @message.user = current_user
   @message.save
   # if @message.save
   #   ActionCable.server.broadcast("chat_room_#{@chat_room.id}",{
@@ -17,6 +18,11 @@ def create
   #     format.html { render "chat_rooms/show"}
   #     format.js
   #   end
+  end
+
+  def index
+    @chat_room = ChatRoom.find(params[:chat_room_id])
+    @messages = @chat_room.messages
   end
 
   private

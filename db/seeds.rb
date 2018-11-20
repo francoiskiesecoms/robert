@@ -63,19 +63,18 @@ mission2= Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[1]
 mission3= Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[2]
 
 mission1.review_ponctuality = 4
-mission1.review_communication = 2
+mission1.review_communication = 4
 mission1.review_satisfaction = 5
-mission1.review_comment = "Romane was awesome. We brought me to a place called Bclub, and I danced with so many of her friends!!! So cool!! "
+mission1.review_comment = "Romane was awesome. She showed up on time and brought me to the museum to check out the Kandisky's exhibition. It was a really nice moment; she even took the time to read out loud all the explainations under the master pieces! We finished the day with a warm hot chocolate at home. Thank you Romane, I'm looking forward to the next time."
 
-mission2.review_ponctuality = 4
-mission2.review_communication = 2
-mission2.review_satisfaction = 5
-mission2.review_comment = "Romane showed up 2 hours late cause she broke her car.. Do not really believe her but still, she was a nice to play soccer with "
-
-mission3.review_ponctuality = 4
-mission3.review_communication = 5
-mission3.review_satisfaction = 5
-mission3.review_comment = "Top !!! Top !!! So cool!!!!!!! Damnnnnn Grandkids c'est d'la bal "
+mission2.review_ponctuality = 1
+mission2.review_communication = 5
+mission2.review_satisfaction = 3
+mission2.review_comment = "Even though Romane is really talkative and always has nice stories to tell... she showed up 2 hours late without any notice.. That's a pity! After that, we had a great time together; she taught me how to write an email to my grand-daughter living abroad, how useful!"
+mission3.review_ponctuality = 5
+mission3.review_communication = 3
+mission3.review_satisfaction = 4
+mission3.review_comment = "Romane was tired so she didn't talk much on the car-journey to my doctor's appointment. Nevertheless, her smile and punctuality are always appreciated."
 
 mission1.save
 mission2.save

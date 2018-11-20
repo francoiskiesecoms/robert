@@ -3,7 +3,7 @@
 
 const div = document.querySelector(".messages");
 const input = document.querySelector('#message_content');
-div.insertAdjacentHTML("beforeend", `<div class=message-content>${input.value} </div>`);
+div.insertAdjacentHTML("beforeend", `<div class="message right message-content">${input.value} </div>`);
 
 input.value = "";
 input.blur();

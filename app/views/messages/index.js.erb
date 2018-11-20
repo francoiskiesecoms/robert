@@ -1,18 +1,9 @@
-messages = document.querySelector(".col-sm-6")
 
-messages.insertAdjacentHTML('afterend', <div class="messages">
-  <% unless @chat_room == []  %>
-    <% @messages.each do |message| %>
-       <div class='message-content'> <%= @message.content %> </div>
-    <%end%>
-  <%end%>
-</div>
-<div id="create-message">
-  <%= simple_form_for [@chat_room.last, Message.new], remote: true do |f| %>
-  <%= f.input :content, label: false %>
-  <%= f.button :submit%>
-  <%end%>
-</div>)
+function replaceMess(m){
+let messages = document.querySelector(".col-sm-6")
 
+messages.innerHTML = m;
 
+}
 
+replaceMess("<%= j render 'message', messages: @messages, chat_room: @chat_room %> " )

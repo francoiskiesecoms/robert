@@ -1,3 +1,16 @@
-<div class="message-content"><%= message.content %></div>
-
-
+ <div class="messages">
+  <% unless chat_room == []  %>
+    <% messages.each do |message| %>
+      <div class="message <%= message.from?(current_user) ? 'right' : '' %> ">
+        <!-- insert avatar  -->
+        <div class='message-content'> <%= message.content %> </div>
+       </div>
+    <%end%>
+  <%end%>
+</div>
+<div id="create-message">
+  <%= simple_form_for [chat_room, Message.new], remote: true do |f| %>
+    <%= f.input :content, label: false %>
+    <%= f.button :submit%>
+  <%end%>
+</div>

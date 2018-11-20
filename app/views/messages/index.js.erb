@@ -1,1 +1,8 @@
+function replaceMess(m){
+let messages = document.querySelector(".col-sm-6")
 
+messages.innerHTML = m;
+
+}
+
+replaceMess("<%= j render 'message', messages: @messages, chat_room: @chat_room %> " )

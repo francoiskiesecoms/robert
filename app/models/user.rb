@@ -4,8 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one :student
+  has_many :fits, through: :student
   has_many :messages, dependent: :destroy
-  has_many :chat_rooms, through: :messages
+  has_many :chat_rooms, through: :fits
 
   after_create :assign_role
 

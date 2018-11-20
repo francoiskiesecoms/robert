@@ -3,6 +3,6 @@ class Message < ApplicationRecord
   belongs_to :user
 
    def from?(some_user)
-
+    user == some_user
    end
 end

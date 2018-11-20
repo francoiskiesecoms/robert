@@ -8,8 +8,7 @@ class FitsController < ApplicationController
       @fit.mission.pending = false
       @fit.mission.save
       @chat_room = ChatRoom.new
-      @chat_room.student = Student.find_by(user_id: current_user.id)
-      @chat_room.facility = @fit.mission.senior.facility
+      @chat_room.fit = @fit
       @chat_room.save
       raise
       respond_to do |format|

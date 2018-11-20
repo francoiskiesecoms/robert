@@ -90,6 +90,7 @@ mission2.review_ponctuality = 1
 mission2.review_communication = 5
 mission2.review_satisfaction = 3
 mission2.review_comment = "Even though Romane is really talkative and always has nice stories to tell... she showed up 2 hours late without any notice.. That’s a pity! After that, we had a great time together; she taught me how to write an email to my grand-daughter living abroad, how useful!"
+
 mission3.review_ponctuality = 5
 mission3.review_communication = 3
 mission3.review_satisfaction = 4

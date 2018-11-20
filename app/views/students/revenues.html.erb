@@ -14,7 +14,7 @@
           <h2>Benefit income for 2019</h2>
               <p>
               <% if @sum_2019 == 0 %>No revenues recorded for 2019<%else%> You have already earned <strong style="color: #D81B60; font-size:20px;"><%= @sum_2019 %>$</strong> in 2019!<%end%></p>
-          <%= column_chart([{ name: 'Money already earned',color: "#0074D9", stack: 'stack1', data: @first_chart_array },{ name: 'Money to be earned', color:"#DDDDDD", stack: 'stack1', data: @second_chart_array}], stacked: true, height: "430px")%>
+          <%= column_chart([{ name: 'Money already earned',color: "#0074D9", stack: 'stack1', data: @first_chart_array_2019 },{ name: 'Money to be earned', color:"#DDDDDD", stack: 'stack1', data: @second_chart_array_2019}], stacked: true, height: "430px")%>
         </div>
       </div>
     </div>

@@ -100,4 +100,11 @@ h4 a:hover{
   background-color: $blue;
   color: white;
 }
-
+.so-cool {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 80px;
+  left: 200px;
+  opacity: unset;
+}

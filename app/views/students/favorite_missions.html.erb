@@ -25,7 +25,7 @@
         </div>
         <div class="right">
           <%= link_to accept_fit_path(mission) , method: :post, remote: true do %>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-sm">Accept</button>
+            <button type="button" class="btn btn-success" id="clickme" data-toggle="modal" data-target=".bd-example-modal-sm">Accept</button>
           <% end %>
 
           <%= link_to refuse_fit_path(mission) , method: :post, remote: true do %>
@@ -41,7 +41,12 @@
                 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-sm">
                   <div class="modal-body">
-                    You have just accepted the mission !
+                    You have just accepted the mission ! Congratulations
+                  </div>
+                  <div class="so-cool">
+                  <i class="fas fa-rocket"></i>
+                  <i class="far fa-thumbs-up"></i>
+                  <i class="fas fa-music"></i>
                   </div>
                   <%= link_to "Ok", dashboard_missions_upcoming_path, class: "ok_button" %>
                 </div>

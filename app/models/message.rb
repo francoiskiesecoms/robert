@@ -1,8 +1,8 @@
 class Message < ApplicationRecord
   belongs_to :chat_room
-  validates :content, presence: true, allow_blank: false
+  belongs_to :user
 
-  # def from?(some_user)
-  #   user == some_user
-  # end
+   def from?(some_user)
+
+   end
 end

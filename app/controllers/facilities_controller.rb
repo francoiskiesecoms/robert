@@ -1,7 +1,6 @@
 class FacilitiesController < ApplicationController
   def index
 
-
     @user_student = Student.find_by(user_id: current_user.id)
     @facility_chose = []
     @facilities = Facility.all

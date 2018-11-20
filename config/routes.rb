@@ -42,6 +42,7 @@ Rails.application.routes.draw do
 
 
   post 'chat_rooms/:chat_room_id/messages', to: "messages#create", as: :chat_room_messages
+  get 'chat_rooms/:chat_room_id/messages', to: "messages#index", as: :messages
 
   get 'dashboard/chat', to: "students#chat", as: :chat
 

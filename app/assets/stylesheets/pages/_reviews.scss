@@ -1,31 +1,19 @@
 #flex {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  margin-bottom: 15px;
 }
 .commentaires {
-  height: 100px;
-  width: 200px;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 2px 26px 0 rgba(0,0,0,0.2);
-  text-align: center;
+  color: #0074D9;
 }
 .etoiles {
-  height: 100px;
-  width: 200px;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 2px 26px 0 rgba(0,0,0,0.2);
-  text-align: center;
+  color: #0074D9;
 }
 .review-top {
-  height: 100px;
-  width: 200px;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 2px 26px 0 rgba(0,0,0,0.2);
-  text-align: center;
+  color: #0074D9;
+  margin-top: 20px;
 }
 
 .review {
@@ -67,7 +55,8 @@ h6 {
 }
 
 i {
-  opacity: 0.7;
+  opacity: 0.6;
+  color: $pink;
 }
 
 .ponctuality {

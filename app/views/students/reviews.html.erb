@@ -2,19 +2,19 @@
 
     <div class="reviews" id = "flex">
       <div class="review-top">
-        <h4>Global Evaluation</h4>
         <div class="flex" style="justify-content: center">
           <% @student.evaluation.times do %>
-            <i class="fas fa-star"></i>
+            <i class="fas fa-star" style="opacity: 1; color: #0074D9"></i>
           <%end%>
         </div>
+        <h4>Global Evaluation</h4>
       </div>
       <div class="commentaires">
-        <h4><%= @student.total_reviews %></h4>
+        <h4 style= "text-align: center"><%= @student.total_reviews %></h4>
         <h4>Total Reviews</h4>
       </div>
       <div class="etoiles">
-        <h4> <%= @student.top_reviews %> </h4>
+        <h4 style= "text-align: center"> <%= @student.top_reviews %> </h4>
         <h4>Stars Reviews </h4>
       </div>
     </div>

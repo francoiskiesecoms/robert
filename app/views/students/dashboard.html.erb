@@ -1,29 +1,28 @@
 <div class="page_container">
   <div class="dashboard">
     <div class="description">
-      <p>Welcome to the <strong> community Robert & Romane </strong>. I hope you will enjoy every moment your spend with seniors.
-      Robert & Romame's mission is to promote intergenerational exchanges. You will be able to teach seniors technology,
-      help them with groceries or help them with any daily tasks. Do not hesitate to reach us if you have any question!
+      <p>Welcome to<strong> Robert & Romane's</strong> community. Robert & Romane connects students to senior citizens who need transportation, house help, technology lessons, companionship and other senior services.
+      Reach out if you have any question!
       </p>
     </div>
     <h3 class="title_1"> <%=@student.name + "'s dashboard" %> </h3>
 
     <div class="calendar">
 
-      <h4>Your calendar</h4>
+      <h4 style ="text-align: center">Your calendar</h4>
       <div class="flex " id="center" >
         <p class = "no-margin-bottom" id = "number"><%=@student.working_days.to_s %></p>
         <p class=" no-margin-bottom  padding-left"> working days</p>
-        <i class="far fa-calendar-alt no-margin-bottom padding-left"></i>
+        <i class="far fa-calendar-alt no-margin-bottom padding-left" style="font-size: 25px;"></i>
       </div>
       <p><%= "You are available " + @student.working_days.to_s + " days to complete missions" %></p>
     </div>
     <div class="reviews-dashboard">
-    <h4>Your reviews</h4>
+    <h4 style ="text-align: center">Your reviews</h4>
       <div class="flex " id="center" >
         <p class = "no-margin-bottom" id = "number"><%=@student.top_reviews.to_s %></p>
         <p class=" no-margin-bottom  padding-left"> top reviews </p>
-        <i class=" fas fa-star no-margin-bottom padding-left"></i>
+        <i class=" fas fa-star no-margin-bottom padding-left"style="font-size: 25px;"></i>
       </div>
       <p><%= "You have " + @student.top_reviews.to_s + " top reviews (5 stars), good job!" %></p>
 
@@ -32,16 +31,18 @@
       <div class="body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url(<%= @student.favorite_facilities.last.facility.photo %>); background-size:cover;">
       </div>
       <div class="footer">
-        <h4><%= @student.favorite_facilities.last.facility.name %></h4>
+        <h4 style ="text-align: center"><%= @student.favorite_facilities.last.facility.name %></h4>
       </div>
     </div>
-      <h3 class="title_2"> Earnings and Activity </h3>
-        <div class="earnings">
-          <h4>Your revenues</h4>
-            <div class="flex padd" id="center" >
-              <p class = "no-margin-bottom" id = "number"><%=@student.revenue.to_s %></p>
-              <i class=" fas fa-euro-sign no-margin-bottom padding-left"></i>
-            </div>
+
+    <h3 class="title_2"> Earnings and Activity </h3>
+
+    <div class="earnings">
+      <h4 style ="text-align: center">Your revenues</h4>
+      <div class="flex padd" id="center" >
+      <p class = "no-margin-bottom" id = "number"><%=@student.revenue.to_s %></p>
+      <i class=" fas fa-euro-sign no-margin-bottom padding-left" style="color: $pink; font-size: 25px;"></i>
+      </div>
 
 
 <!--           <div class ="chart"><%= pie_chart({"Earned" => @sum_received, "Upcoming" => @sum_not_received}, donut: true, legend: "left", width: "150px") %>
@@ -50,12 +51,12 @@
     <div class="jobs">
       <div class="completed">
         <p class = "no-margin-bottom" id = "number"><%=@student.completed_missions.size.to_s %></p>
-        <p>COMPLETED MISSIONS</p>
+        <p>completed missions</p>
 
       </div>
       <div class="upcoming">
         <p class = "no-margin-bottom" id = "number"><%=@student.upcoming_missions.size.to_s %></p>
-        <p>UPCOMING MISSIONS</p>
+        <p>upcoming missions</p>
       </div>
     </div>
     <div class="notifications" >

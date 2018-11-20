@@ -3,12 +3,13 @@ h3 {
   letter-spacing: 2px;
   font-variant: small-caps;
   color: $blue;
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
 h4 {
   font-weight: 500;
   font-variant: small-caps;
   letter-spacing: 1.5px;
-  text-align: center;
+  text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
 .dashboard {
   display: grid;
@@ -23,6 +24,7 @@ h4 {
 .description p {
   font-size: 16px;
   text-align: justify;
+  letter-spacing: 2px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -32,19 +34,24 @@ h4 {
   grid-column: 1 / span 3;
 }
 
- .calendar {
+.calendar {
   grid-row: 3 / span 1;
   grid-column: 1 / span 1;
+  text-align: center;
 }
-
- .reviews-dashboard {
+#center {
+  justify-content: center;
+}
+.reviews-dashboard {
   grid-row: 3 / span 1;
   grid-column: 2 / span 1;
+  text-align: center;
 }
 
- .facilities-dashboard {
+.facilities-dashboard {
   grid-row: 3 / span 1;
   grid-column: 3 / span 1;
+  text-align: center;
 }
 
  .title_2 {
@@ -61,7 +68,14 @@ h4 {
   grid-row: 5 / span 1;
   grid-column: 2 / span 1;
 }
-
+.completed p {
+  font-variant: small-caps;
+  font-size: 21px;
+}
+.upcoming p {
+  font-variant: small-caps;
+  font-size: 21px;
+}
 .notifications {
   grid-row: 5 / span 1;
   grid-column: 3 / span 1;
@@ -82,6 +96,8 @@ h4 {
 
 #number {
   font-size: 35px;
+  color: $pink;
+  letter-spacing:-3px;
 }
 
 .no-margin-bottom {
@@ -104,7 +120,9 @@ h4 {
   border-radius: 2px;
   margin: 20px 15px;
 }
-
+.footer {
+  justify-content: center;
+}
 .jobs {
   text-align: center;
 }
@@ -130,7 +148,6 @@ h4 {
 .padd {
   padding: 20px 75px;
 }
-
 
 
 

@@ -13,7 +13,7 @@
       <div class="flex " id="center" >
         <p class = "no-margin-bottom" id = "number"><%=@student.working_days.to_s %></p>
         <p class=" no-margin-bottom  padding-left"> working days</p>
-        <i class="far fa-calendar-alt no-margin-bottom padding-left" style="font-size: 25px;"></i>
+        <i class="far fa-calendar-alt no-margin-bottom padding-left" style="font-size: 25px; opacity:unset;"></i>
       </div>
       <p><%= "You are available " + @student.working_days.to_s + " days to complete missions" %></p>
     </div>
@@ -22,7 +22,7 @@
       <div class="flex " id="center" >
         <p class = "no-margin-bottom" id = "number"><%=@student.top_reviews.to_s %></p>
         <p class=" no-margin-bottom  padding-left"> top reviews </p>
-        <i class=" fas fa-star no-margin-bottom padding-left"style="font-size: 25px;"></i>
+        <i class=" fas fa-star no-margin-bottom padding-left"style="font-size: 25px; opacity:unset;"></i>
       </div>
       <p><%= "You have " + @student.top_reviews.to_s + " top reviews (5 stars), good job!" %></p>
 
@@ -41,7 +41,7 @@
       <h4 style ="text-align: center">Your revenues</h4>
       <div class="flex padd" id="center" >
       <p class = "no-margin-bottom" id = "number"><%=@student.revenue.to_s %></p>
-      <i class=" fas fa-euro-sign no-margin-bottom padding-left" style="color: $pink; font-size: 25px;"></i>
+      <i class=" fas fa-euro-sign no-margin-bottom padding-left" style="font-size: 25px; opacity:unset"></i>
       </div>
 
 

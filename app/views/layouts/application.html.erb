@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <title>Robert & Romane</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
@@ -18,13 +18,14 @@
 
     <%= render 'shared/navbar' unless @disable_nav %>
     <%= render 'shared/tabs' unless @disable_nav %>
+
     <%= yield %>
     <%= javascript_pack_tag 'landing' %>
 
     <%= javascript_include_tag 'application' %>
     <%#= stylesheet_pack_tag "map" %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+
     <%= yield :after_js %>
   </body>
 </html>

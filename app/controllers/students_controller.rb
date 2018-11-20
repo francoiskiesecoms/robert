@@ -43,6 +43,7 @@ class StudentsController < ApplicationController
        @second_chart_array_2019 = @student.search_and_add_upcoming(mission.end_time.strftime('%B'), 2019, @second_chart_array_2019)
       end
     end
+    @sum_2018 = @student.sum_revenu(@first_chart_array)
   end
 
   def profile

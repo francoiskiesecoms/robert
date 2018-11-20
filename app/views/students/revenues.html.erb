@@ -1,17 +1,21 @@
 <div class="wrapper">
   <div class="page_container">
     <div class="row">
-      <div class="col-xs-12-col-sm-6-col-sm-offset-6">
-        <h2 style="text-align: center; font-size: 30px; font-weight: bolder;margin-bottom: 20px;">Benefit income for 2018</h2>
-            <p style="text-align: left; margin-bottom: 5px;font-weight: bold;">
-            <% if @sum_2018 == 0 %>No revenue yet<%else%> <%= @sum_2018 %>$<%end%></p>
-        <%= column_chart([{ name: 'Received', stack: 'stack1', data: @first_chart_array },{ name: 'TBR', stack: 'stack1', data: @second_chart_array}], stacked: true, height: "430px")%>
+      <div class="graph">
+        <div class="col-xs-12-col-sm-6-col-sm-offset-6">
+          <h2>Benefit income for 2018</h2>
+              <p>
+              <% if @sum_2018 == 0 %>No revenues recorded for 2018<%else%> You have already earned <strong style="color:#D81B60; font-size:20px"><%= @sum_2018 %>$</strong> in 2018<%end%></p>
+          <%= column_chart([{ name: 'Money already earned',color: "#0074D9", stack: 'stack1', data: @first_chart_array },{ name: 'Money to be earned', color:"#DDDDDD", stack: 'stack1', data: @second_chart_array}], stacked: true, height: "430px")%>
+        </div>
       </div>
-      <div class="col-xs-12-col-sm-6-col-sm-offset-6">
-        <h2 style="text-align: center; font-size: 30px; font-weight: bolder;margin-bottom: 20px;">Benefit income for 2019</h2>
-            <p style="text-align: left; margin-bottom: 5px;font-weight: bold;">
-            <% if @sum_2019 == 0 %>No revenue yet<%else%> <%= @sum_2019 %>$<%end%></p>
-        <%= column_chart([{ name: 'Received', stack: 'stack1', data: @first_chart_array_2019 },{ name: 'TBR', stack: 'stack1', data: @second_chart_array_2019}], stacked: true, height: "430px")%>
+      <div class="graph">
+        <div class="col-xs-12-col-sm-6-col-sm-offset-6">
+          <h2>Benefit income for 2019</h2>
+              <p>
+              <% if @sum_2019 == 0 %>No revenues recorded for 2019<%else%> You have already earned <strong style="color: #D81B60; font-size:20px;"><%= @sum_2019 %>$</strong> in 2019!<%end%></p>
+          <%= column_chart([{ name: 'Money already earned',color: "#0074D9", stack: 'stack1', data: @first_chart_array_2019 },{ name: 'Money to be earned', color:"#DDDDDD", stack: 'stack1', data: @second_chart_array_2019}], stacked: true, height: "430px")%>
+        </div>
       </div>
     </div>
   </div>

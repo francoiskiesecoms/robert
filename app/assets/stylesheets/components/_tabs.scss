@@ -1,11 +1,10 @@
-ul#myTab {
+#myTab {
   height: 70px;
   position: sticky;
   top: 0;
   box-shadow: 1px 1px 8px rgba(0,0,0,0.2);
   z-index: 800;
   background-color: white;
-  position: relative;
 }
 li.nav-item a{
   height: 70px;

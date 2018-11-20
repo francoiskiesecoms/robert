@@ -2,7 +2,7 @@
  <div class="messages">
   <% unless chat_room == []  %>
     <% messages.each do |message| %>
-      <div class="message <%= message.from?(current_user) ? 'right' : '' %> ">
+      <div id="mess" class="message <%= message.from?(current_user) ? 'right' : '' %> ">
         <!-- insert avatar  -->
         <div class='message-content'> <%= message.content %> </div>
        </div>

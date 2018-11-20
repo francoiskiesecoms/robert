@@ -61,3 +61,15 @@
                 </div>
                 <button>Ok</button>
               </div>
+<script>
+  function letTheMusicPlay () {
+  const button = document.getElementById('clickme');
+  const audio = new Audio('/sounds/13770.mp3');
+
+  button.addEventListener('click', (e) => {
+    console.log('hello from music player');
+    audio.play();
+  });
+}
+letTheMusicPlay();
+</script>

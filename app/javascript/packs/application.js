@@ -10,7 +10,8 @@ Chartkick.addAdapter(Chart);
    $(document).ready(function(){
     $('.datepicker').datepicker();
   });
-
+// import {letTheMusicPlay} from '../components/listener';
+// letTheMusicPlay();
 
 // import { myChart } from '../components/highcharts';
 // myChart();

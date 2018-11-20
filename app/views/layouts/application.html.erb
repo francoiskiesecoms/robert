@@ -18,13 +18,14 @@
 
     <%= render 'shared/navbar' unless @disable_nav %>
     <%= render 'shared/tabs' unless @disable_nav %>
+
     <%= yield %>
     <%= javascript_pack_tag 'landing' %>
 
     <%= javascript_include_tag 'application' %>
     <%#= stylesheet_pack_tag "map" %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+
     <%= yield :after_js %>
   </body>
 </html>

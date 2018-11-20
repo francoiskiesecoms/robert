@@ -11,9 +11,6 @@ class Student < ApplicationRecord
   has_many :availabilities, dependent: :destroy
   has_many :missions
   has_many :fits
-  has_many :chat_rooms
-  has_many :messages, through: :chat_rooms
-
 
   def refused_missions
     refused_missions = []
@@ -43,7 +40,7 @@ class Student < ApplicationRecord
   def available_missions
     favorite_missions.select do |fav_mission|
       (fav_mission.pending) && (fav_mission.start_time > Time.now)
-    end
+
   end
 
   def acceptable_missions
@@ -161,7 +158,7 @@ class Student < ApplicationRecord
     sum
   end
 
-    def revenue
+  def revenue
     sum = 0
     unless fits == []
       fits.each do |fit|

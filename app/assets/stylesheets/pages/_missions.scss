@@ -45,12 +45,14 @@ h4 a:hover{
 .right {
   margin-left: auto;
   margin-right: 10px;
-
+  width: 200px;
+  text-align: center;
 }
 
 .center {
   flex: 0 0 auto;
   margin-left: 15px;
+  width: 400px;
 }
 
 .schedule {
@@ -72,7 +74,7 @@ h4 a:hover{
 .right {
   margin-top: 25px;
 }
-.modal-body {
+#MissionModal{
   font-weight: 600;
   letter-spacing: 2px;
   text-align: center;

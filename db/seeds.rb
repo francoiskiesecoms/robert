@@ -8,7 +8,8 @@ Mission.destroy_all
 FavoriteFacility.destroy_all
 Availability.destroy_all
 User.destroy_all
-
+ChatRoom.destroy_all
+Message.destroy_all
 
 
 photo = []

@@ -2,7 +2,6 @@ class Student < ApplicationRecord
 
 
 
-  validates :email, format: { with: /\A.*@.*\.com\z/ }
 
   mount_uploader :photo, PhotoUploader
 

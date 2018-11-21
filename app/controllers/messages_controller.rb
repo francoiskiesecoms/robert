@@ -1,4 +1,7 @@
 class MessagesController < ApplicationController
+
+
+
 def create
   @message = Message.new(message_params)
   @chat_room = ChatRoom.find(params[:chat_room_id])
@@ -24,6 +27,8 @@ def create
     @chat_room = ChatRoom.find(params[:chat_room_id])
     @messages = @chat_room.messages
   end
+
+
 
   private
   def message_params

@@ -1,7 +1,7 @@
 class Student < ApplicationRecord
 
 
-  validates :name, presence: true
+
   validates :email, format: { with: /\A.*@.*\.com\z/ }
 
   mount_uploader :photo, PhotoUploader

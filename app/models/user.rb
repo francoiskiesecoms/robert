@@ -12,8 +12,8 @@ class User < ApplicationRecord
   after_create :assign_role
 
   def assign_role
-    if student
-      Student.create!(email: email, user: self, name: name)
+    if is_student
+      Student.create!(email: email, user: self)
     # else
     #   Facility.create!(email:email, user: self)
     end

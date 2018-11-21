@@ -5,7 +5,7 @@
       Reach out if you have any question!
       </p>
     </div>
-    <h3 class="title_1"> <%=@student.name + "'s dashboard" %> </h3>
+    <h3 class="title_1"> <%=@student.name + "'s dashboard" if @student.name%> </h3>
 
     <div class="calendar">
 
@@ -28,10 +28,10 @@
 
     </div>
     <div class="facilities-dashboard">
-      <div class="body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url(<%= @student.favorite_facilities.last.facility.photo %>); background-size:cover;">
+      <div class="body" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url(<%= @student.favorite_facilities.last.facility.photo  unless @student.favorite_facilities == [] %>); background-size:cover;">
       </div>
       <div class="footer">
-        <h4 style ="text-align: center"><%= @student.favorite_facilities.last.facility.name %></h4>
+        <h4 style ="text-align: center"><%= @student.favorite_facilities.last.facility.name unless @student.favorite_facilities == [] %></h4>
       </div>
     </div>
 

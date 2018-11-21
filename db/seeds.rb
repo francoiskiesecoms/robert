@@ -121,13 +121,7 @@ mission4.save
 mission5.save
 mission6.save
 
-chatroom1 = ChatRoom.new
-chatroom1.save
 
-message1 = Message.new(chat_room: chatroom1)
-message1.user = romane
-message1.save
-puts "done"
 
 
 

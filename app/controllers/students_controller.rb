@@ -101,8 +101,8 @@ class StudentsController < ApplicationController
 
   def reviews
     @student = Student.find_by(user_id: current_user.id)
+    @fits = @student.fits_with_reviews
   end
-
 
   def chat
     @student = Student.find_by(user_id: current_user.id)

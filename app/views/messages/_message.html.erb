@@ -1,18 +1,20 @@
 
- <div class="messages">
+    <p>Chat with <%= chat_room.fit.mission.senior.facility.name %>
+   </p>
+ <div class="messages" style = "height: 472px; overflow: scroll">
+  <p style="margin-top: 2px; color: #5a5a5a; font-size: 18px">
   <% unless chat_room == []  %>
     <% messages.each do |message| %>
-      <div class="message <%= message.from?(current_user) ? 'right' : '' %> ">
+      <div id="mess" class="message <%= message.from?(current_user) ? 'right' : '' %> " >
         <!-- insert avatar  -->
         <div class='message-content'> <%= message.content %> </div>
-       </div>
+      </div>
     <%end%>
   <%end%>
 </div>
 <div id="create-message">
   <%= simple_form_for [chat_room, Message.new], remote: true do |f| %>
     <%= f.input :content, label: false %>
-    <%= f.button :submit%>
   <%end%>
 </div>
 

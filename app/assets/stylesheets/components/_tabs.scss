@@ -6,6 +6,10 @@
   z-index: 800;
   background-color: white;
 }
+li.nav-item {
+  display: flex;
+}
+
 li.nav-item a{
   height: 70px;
   color: #777;
@@ -17,8 +21,10 @@ li.nav-item a{
   padding-right: 30px;
 }
 li.nav-item a:hover {
-  opacity: 0.8;
-  font-weight: 500;
+  opacity: 0.9;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: $light-gray;
 }
 #official-name {
   font-family: "Andale Mono", "monospace";

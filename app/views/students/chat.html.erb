@@ -1,15 +1,29 @@
 <div class="page_container">
 
-  <div class="flex">
+  <div class="flex smaller">
     <div class="chatrooms">
-      <h4>My chatrooms</h4>
-      <% current_user.chat_rooms.each do |chatroom| %>
-        <div class="chatroom">
-          <%= link_to chatroom.fit.mission.description, messages_path(chatroom), remote: :true %>
-        </div>
+      <p style="margin-top: 2px; color: #5a5a5a">All chatrooms</p>
+      <% unless current_user.chat_rooms == [] %>
+        <% current_user.chat_rooms.each do |chatroom| %>
+          <%= link_to messages_path(chatroom), remote: :true do %>
+            <div class="chatroom">
+              <div class="flex spacearound">
+                <% unless Student.find_by(user:current_user).nil? %>
+                  <h8><%= chatroom.fit.mission.senior.facility.name %> </h8>
+                  <h8><%= chatroom.fit.mission.schedule.split(" ")[1]%></h8>
+                <%end%>
+              </div>
+              <p class = "shortened">
+                <% unless chatroom.messages == [] %>
+                  <i> <%= chatroom.messages.last.shortened %> </i>
+                <%end%>
+              </p>
+            </div>
+          <%end%>
+        <%end%>
       <%end%>
     </div>
-    <div class="chat">
+    <div class="chat ">
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
@@ -22,4 +36,4 @@
 </div>
 
 
-<!-- " current_user.chat_rooms.last.messages " this you get in the controller  -->
+

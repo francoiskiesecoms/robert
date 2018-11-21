@@ -1,17 +1,17 @@
 puts "Starting..."
 puts "Destroying!"
-Facility.destroy_all
-Senior.destroy_all
-Fit.destroy_all
+Facility.delete_all
+Senior.delete_all
+Fit.delete_all
 
-Student.destroy_all
+Student.delete_all
 
-Mission.destroy_all
-FavoriteFacility.destroy_all
-Availability.destroy_all
-Message.destroy_all
-ChatRoom.destroy_all
-User.destroy_all
+Mission.delete_all
+FavoriteFacility.delete_all
+Availability.delete_all
+Message.delete_all
+ChatRoom.delete_all
+User.delete_all
 
 puts "Done with destroy"
 photo = []

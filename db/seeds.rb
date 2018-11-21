@@ -1,7 +1,7 @@
 puts "Starting..."
 puts "Destroying!"
-Facility.delete_all
 Senior.delete_all
+Facility.delete_all
 Fit.delete_all
 
 Student.delete_all

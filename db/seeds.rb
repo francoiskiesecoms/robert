@@ -1,14 +1,14 @@
 puts "Starting..."
 puts "Destroying!"
+Availability.delete_all
+FavoriteFacility.delete_all
+Mission.delete_all
 Senior.delete_all
 Facility.delete_all
 Fit.delete_all
 
 Student.delete_all
 
-Mission.delete_all
-FavoriteFacility.delete_all
-Availability.delete_all
 Message.delete_all
 ChatRoom.delete_all
 User.delete_all

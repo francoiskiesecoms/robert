@@ -5,12 +5,12 @@ FavoriteFacility.delete_all
 Mission.delete_all
 Senior.delete_all
 Facility.delete_all
+Message.delete_all
 ChatRoom.delete_all
 Fit.delete_all
 
 Student.delete_all
 
-Message.delete_all
 User.delete_all
 
 puts "Done with destroy"

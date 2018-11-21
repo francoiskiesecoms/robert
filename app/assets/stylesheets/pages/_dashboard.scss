@@ -15,6 +15,7 @@ h4 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 150px 8% 230px 8% 230px;
+  margin-top: -15px;
 }
  .description {
   grid-row: 1 / span 1;

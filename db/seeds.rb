@@ -1,3 +1,5 @@
+puts "Starting..."
+puts "Destroying!"
 Facility.destroy_all
 Senior.destroy_all
 Fit.destroy_all
@@ -11,7 +13,7 @@ Message.destroy_all
 ChatRoom.destroy_all
 User.destroy_all
 
-
+puts "Done with destroy"
 photo = []
 photo.push("https://g5-assets-cld-res.cloudinary.com/image/upload/q_auto,f_auto,fl_lossy/g5/g5-c-ivr2j426-pacifica-senior-living-client/g5-cl-1ggfaylaw7-pacifica-senior-living/uploads/pacifica-senior-living-lobby.jpg")
 photo.push("https://holyokeredevelopment.com/wp-content/uploads/senior-center-538x218.png")
@@ -125,6 +127,7 @@ chatroom1.save
 message1 = Message.new(chat_room: chatroom1)
 message1.user = romane
 message1.save
+puts "done"
 
 
 

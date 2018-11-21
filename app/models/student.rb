@@ -14,6 +14,13 @@ class Student < ApplicationRecord
   has_many :chat_rooms
   has_many :messages, through: :chat_rooms
 
+  def fits_with_reviews
+    f = []
+    fits.each do |fit|
+      f << fit unless fit.mission.average_rating == 0
+    end
+    return f
+  end
 
   def refused_missions
     refused_missions = []
@@ -84,9 +91,9 @@ class Student < ApplicationRecord
   def evaluation
     average = 0
     fits.each do |fit|
-      average += (fit.mission.average_rating / fits.size)
+      average += (fit.mission.average_rating.to_f / fits_with_reviews.size.to_f) unless fit.mission.average_rating == 0
     end
-  average
+  average.to_i
   end
 
   def total_reviews

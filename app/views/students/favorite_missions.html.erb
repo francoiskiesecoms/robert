@@ -12,7 +12,7 @@
   <div class="mission_container">
     <% @missions.each do |mission| %>
       <div class="mission" data-mission-id="mission-<%= mission.id%>">
-        <div class="left">
+        <div class="left" style="background-image:linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url(<%=mission.senior.facility.photo %>)">
           <div class="schedule">
             <p class="date"><%= mission.schedule.split("from")[0] %></p>
             <p class="time"><%= mission.schedule.split("from")[1] %></p>
@@ -37,30 +37,38 @@
   </div>
 </div>
 
-                <!-- For the pop-up accept mission -->
-                <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                  <div class="modal-body" id="MissionModal">
-                    You have just accepted the mission ! Congratulations
-                  </div>
-                  <div class="so-cool">
-                  <i class="fas fa-rocket"></i>
-                  <i class="far fa-thumbs-up"></i>
-                  <i class="fas fa-music"></i>
-                  </div>
-                  <%= link_to "Ok", dashboard_missions_upcoming_path, class: "ok_button" %>
-                </div>
-              </div>
+  <!-- For the pop-up accept mission -->
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-body" id="MissionModal">
+        You have just accepted the mission ! Congratulations
+      </div>
+      <div class="so-cool">
+        <i class="fas fa-rocket"></i>
+        <i class="far fa-thumbs-up"></i>
+        <i class="fas fa-music"></i>
+      </div>
+      <div class="buttons-modal">
+        <div>
+          <%= link_to "See my upcoming missions", dashboard_missions_upcoming_path, class: "ok_button" %>
+        </div>
+        <div>
+        <%= link_to "Chat with the facility", chat_path, class: "ok_button" %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-               <div class="modal fade bd-example-modal-sms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                  <div class="modal-body">
-                    You have just declined the mission !
-                  </div>
-                   <%= link_to "Ok", dashboard_missions_path, class: "ok_button" %>
-                </div>
-                <button>Ok</button>
-              </div>
+ <div class="modal fade bd-example-modal-sms" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-body">
+      You have just declined the mission !
+    </div>
+     <%= link_to "Ok", dashboard_missions_path, class: "ok_button" %>
+  </div>
+  <button>Ok</button>
+</div>
+
 <script>
   function letTheMusicPlay () {
   const button = document.getElementById('clickme');
@@ -73,3 +81,5 @@
 }
 letTheMusicPlay();
 </script>
+
+

@@ -14,8 +14,7 @@
   display: flex;
   background-color: white;
   margin-top: 20px;
-  padding-top: 10px;
-  padding-left: 10px;
+
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 
 }
@@ -39,7 +38,10 @@ h4 a:hover{
 }
 .left {
   flex: 0 0 20%;
-
+  background-size: cover;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: white;
 }
 
 .right {
@@ -47,12 +49,16 @@ h4 a:hover{
   margin-right: 10px;
   width: 200px;
   text-align: center;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .center {
   flex: 0 0 auto;
   margin-left: 15px;
   width: 400px;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .schedule {
@@ -83,19 +89,22 @@ h4 a:hover{
   background-color: white;
   width: 500px;
   height: 300px;
-  border: 1px solid rgba(0,0,0,0.6);
-  position: relative;
+  border-radius: 3px;
+  position: absolute;
+  box-shadow: 1px 1px 2px rgba(0,0,0, 0.2);
+
 }
 .ok_button {
-  position: absolute;
-  top: 150px;
-  left: 200px;
   font-weight: 600;
   border-radius: 12px;
   border: 1px solid $blue;
   color: $blue;
   width: 100px;
   text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 .ok_button:hover {
   text-decoration: none;
@@ -110,3 +119,16 @@ h4 a:hover{
   left: 200px;
   opacity: unset;
 }
+
+.buttons-modal {
+  position: relative;
+  top: 150px;
+  left: 113px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items:center;
+  height:100px;
+}
+
+

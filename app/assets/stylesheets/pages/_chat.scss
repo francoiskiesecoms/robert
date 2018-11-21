@@ -7,6 +7,113 @@
   overflow: scroll;
 }
 
+#ChatTitle {
+  color: $blue;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  font-size: 25px;
+  margin-top: 5px;
+}
+#facility-name-title {
+  color: #0074D9;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  font-size: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+.messages {
+  font-size: 14px;
+  color: #868686;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  border-bottom-width: 0;
+  max-height: calc(100vh - 70px - 45px - 61px - 30px);
+  overflow: scroll;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 10px;
+  &.right {
+    flex-direction: row-reverse;
+    .message-content {
+    background-color: rgba(0, 116, 217, 0.06);
+    }
+  }
+}
+.message-content {
+  background-color: rgba(0, 116, 217, 0.06);
+  border-radius: 3px;
+  margin: 0 10px;
+  padding: 11px 10px 8px 10px;
+}
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+#create-message {
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+.message_content {
+  margin-bottom: 0;
+}
+input.form-control {
+  border: 1px solid #ECECEC;
+  box-shadow: none;
+  font-size: 14px;
+  color: #868686;
+  &:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: none;
+  }
+}
+.chat-header {
+  background-color: #4F2F4C;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  h4 {
+    margin: 0;
+  }
+}
+
+.spacearound {
+  justify-content: space-evenly;
+  letter-spacing: 1px;
+  font-variant: small-caps;
+  :hover {
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
+.shortened {
+  margin: 10px;
+  i {
+    color: unset;
+    font-style: unset;
+  }
+}
+
+.chatroom {
+  background-color: rgba(0, 116, 217, 0.06);
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  color: #5a5a5a;
+}
+
 .smaller {
   height: 600px;
 }

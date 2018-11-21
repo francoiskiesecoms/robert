@@ -3,17 +3,23 @@
   <div class="flex smaller">
     <div class="chatrooms">
       <p style="margin-top: 2px; color: #5a5a5a">All chatrooms</p>
-      <% current_user.chat_rooms.each do |chatroom| %>
-        <%= link_to messages_path(chatroom), remote: :true do %>
-          <div class="chatroom">
-            <div class="flex spacearound">
-              <% unless Student.find_by(user:current_user).nil? %>
-                <h8><%= chatroom.fit.mission.senior.facility.name %> </h8>
-                <h8><%= chatroom.fit.mission.schedule.split(" ")[1]%></h8>
-              <%end%>
+      <% unless current_user.chat_rooms == [] %>
+        <% current_user.chat_rooms.each do |chatroom| %>
+          <%= link_to messages_path(chatroom), remote: :true do %>
+            <div class="chatroom">
+              <div class="flex spacearound">
+                <% unless Student.find_by(user:current_user).nil? %>
+                  <h8><%= chatroom.fit.mission.senior.facility.name %> </h8>
+                  <h8><%= chatroom.fit.mission.schedule.split(" ")[1]%></h8>
+                <%end%>
+              </div>
+              <p class = "shortened">
+                <% unless chatroom.messages == [] %>
+                  <i> <%= chatroom.messages.last.shortened %> </i>
+                <%end%>
+              </p>
             </div>
-            <p class = "shortened"> <i> <%= chatroom.messages.last.shortened %> </i></p>
-          </div>
+          <%end%>
         <%end%>
       <%end%>
     </div>

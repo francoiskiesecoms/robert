@@ -12,9 +12,9 @@ class Message < ApplicationRecord
     split = content.split(" ")
     counter = 0
     while counter < 5
-      string << split[counter] unless split[counter].nil?
+      string << (split[counter] + " ") unless split[counter].nil?
       counter += 1
     end
-    string
+    string +"..."
   end
 end

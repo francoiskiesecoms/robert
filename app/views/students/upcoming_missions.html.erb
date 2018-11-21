@@ -9,7 +9,7 @@
   <div class="mission_container">
     <% @missions.each do |mission| %>
       <div class="mission">
-        <div class="left">
+        <div class="left" style="background-image:linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url(<%=mission.senior.facility.photo %>)">
           <div class="schedule">
             <p class="date"><%= mission.schedule.split("from")[0] %></p>
             <p class="time"><%= mission.schedule.split("from")[1] %></p>

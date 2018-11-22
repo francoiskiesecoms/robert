@@ -86,46 +86,20 @@ FavoriteFacility.create!(student:student, facility: Facility.last)
 FavoriteFacility.create!(student:student, facility: Facility.first)
 
 
-availability1 = Availability.create!(start_date: Time.new(2018, 12, 1, 10, 00) , end_date: Time.new(2018, 12, 5, 18, 00), student: student )
-availability2 = Availability.create!(start_date: Time.new(2018, 12, 9, 10, 00) , end_date: Time.new(2018, 12, 28, 17, 00), student: student )
 availability3 = Availability.create!(start_date: Time.new(2019, 1, 2, 10, 00) , end_date: Time.new(2019, 1, 28, 17, 00), student: student )
 availability4 = Availability.create!(start_date: Time.new(2018, 10, 5, 14, 30) , end_date: Time.new(2018, 10, 5, 18, 30), student: student )
 availability5 = Availability.create!(start_date: Time.new(2018, 11, 18, 10, 00) , end_date: Time.new(2018, 11, 18, 19, 00), student: student )
-availability6 = Availability.create!(start_date: Time.new(2018, 12, 5, 10, 00) , end_date: Time.new(2018, 12, 5, 19, 00), student: student )
 
 
-
-Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[0])
-Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2019, 2, 5, 10, 30))[1])
-Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[2])
 Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2018, 10, 5, 14, 30))[3])
 Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2018, 11, 18, 10, 30))[4])
-Fit.create!(student:student, mission: Mission.where(start_time:Time.new(2018, 12, 5, 10, 30))[5])
 
 
-mission1= Mission.where(start_time:Time.new(2019, 1, 5, 10, 30))[0]
-mission2= Mission.where(start_time:Time.new(2019, 2, 5, 10, 30))[1]
-mission3= Mission.where(start_time:Time.new(2019, 3, 5, 10, 30))[2]
 mission4= Mission.where(start_time:Time.new(2018, 10, 5, 14, 30))[3]
 mission5= Mission.where(start_time:Time.new(2018, 11, 18, 10, 30))[4]
-mission6= Mission.where(start_time:Time.new(2018, 12, 5, 10, 30))[5]
 
 
 
-mission1.review_ponctuality = 4
-mission1.review_communication = 4
-mission1.review_satisfaction = 5
-mission1.review_comment = "Romane was awesome. She showed up on time and brought me to the museum to check out the Kandisky’s exhibition. It was a really nice moment; she even took the time to read out loud all the explainations under the master pieces! We finished the day with a warm hot chocolate at home. Thank you Romane, I’m looking forward to the next time."
-
-mission2.review_ponctuality = 1
-mission2.review_communication = 5
-mission2.review_satisfaction = 3
-mission2.review_comment = "Even though Romane is really talkative and always has nice stories to tell... she showed up 2 hours late without any notice.. That’s a pity! After that, we had a great time together; she taught me how to write an email to my grand-daughter living abroad, how useful!"
-
-mission3.review_ponctuality = 5
-mission3.review_communication = 3
-mission3.review_satisfaction = 4
-mission3.review_comment = "Romane was tired so she didn’t talk much on the car-journey to my doctor’s appointment. Nevertheless, her smile and punctuality are always appreciated."
 
 mission4.review_ponctuality = 4
 mission4.review_communication = 5
@@ -137,17 +111,11 @@ mission5.review_communication = 3
 mission5.review_satisfaction = 2
 mission5.review_comment = "She arrived on time but did not communicate enough!"
 
-mission6.review_ponctuality = 4
-mission6.review_communication = 5
-mission6.review_satisfaction = 2
-mission6.review_comment = "Talks a bit too much!"
 
-mission1.save
-mission2.save
-mission3.save
+
 mission4.save
 mission5.save
-mission6.save
+
 
 
 

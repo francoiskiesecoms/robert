@@ -61,9 +61,8 @@
     </div>
     <div class="notifications" >
     <h4>Notifications</h4>
-    <p><%= @student.notif_name %></p>
-    <p><%= @student.notif_content %></p>
-    <p><%= @student.notif_time.strftime('%A, %b %d') if @student.notif_time  %></p>
+    <p style="font-size:17px; font-variant: small-caps; font-weight: 600"><i class="far fa-comments"></i> <%= @student.notif_name %></p>
+
 
     </div>
   </div>

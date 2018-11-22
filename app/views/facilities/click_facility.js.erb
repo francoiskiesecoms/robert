@@ -1,12 +1,4 @@
-<% if @facility %>
 
-alert("You have just added this facility to your list")
 document.getElementById('facility-<%= @facility.id %>').style.boxShadow = "1px 1px 10px rgba(0,0,0,0.3)"
+ document.getElementById('facility-<%= @facility.id %>').innerHTML = " <%= j render 'facilities/card_facility', facility: @facility %>  "
 
-document.getElementById('facility-<%= @facility.id %>').innerHTML = " <%= j render 'facilities/card_facility', facility: @facility %>  "
-
-<% else %>
-
-console.log('No facility has been selected')
-
-<% end %>

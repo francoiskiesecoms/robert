@@ -1,8 +1,8 @@
 <div style="display: flex;">
   <div class="container">
     <div class="journey">
-      <p> Done with your selection? Please now add your availabilities</p>
-      <%= link_to "Next step !",dashboard_path, class: "next-step"%>
+      <p> Done with your selection? Please add your availabilities</p>
+      <%= link_to "Next step !",calendar_path, class: "next-step"%>
       </div>
     <div class="row">
       <% @facilities.each do |facility|%>
@@ -13,36 +13,9 @@
         <% end %>
         <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id %>" style="<%= chosen ? 'box-shadow: 1px 1px 10px rgba(0,0,0,0.3)' : '' %>">
         <% if chosen %>
-          <%= link_to facility_remove_path(facility: facility.id), remote: true do %>
-            <% if facility.photo %>
-              <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url(<%= facility.photo%>);margin-top: 10px; margin-bottom: 10px;">
-            <% else %>
-              <div class="card card-facility" data-target="facility-<%= facility.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
-            <% end %>
-            <div class="card-category"><%= Facility.name %></div>
-            <div class="card-description">
-              <p><%= facility.address %></p>
-            </div>
-            </div>
-          <%end%>
-
+          <%= render 'facilities/card_facility', facility: facility %>
         <%else%>
-           <%= link_to facility_add_path(facility: facility.id), remote: true do %>
-             <% if facility.photo %>
-              <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url(<%= facility.photo%>);margin-top: 10px; margin-bottom: 10px;">
-            <% else %>
-              <div class="card card-facility" data-target="facility-<%= facility.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
-            <% end %>
-            <div class="card-category"><%= Facility.name %></div>
-            <div class="card-description">
-              <p><%= facility.address %></p>
-            </div>
-            </div>
-          <%end%>
+          <%= render 'facilities/other_card', facility: facility %>
         <%end%>
         </div>
       <%end%>

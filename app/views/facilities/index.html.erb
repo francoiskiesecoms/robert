@@ -1,5 +1,9 @@
 <div style="display: flex;">
   <div class="container">
+    <div class="journey">
+      <p> Done with your selection? Please now add your availabilities</p>
+      <%= link_to "Next step !",dashboard_path, class: "next-step"%>
+      </div>
     <div class="row">
       <% @facilities.each do |facility|%>
         <% if @facility_chose.include?(facility.id) %>

@@ -176,6 +176,16 @@ class Student < ApplicationRecord
     sum
   end
 
+  def notif_content
+    user.chat_rooms.last.fit.mission.senior.facility.user.messages.last.content
+  end
+  def notif_time
+    user.chat_rooms.last.fit.mission.senior.facility.user.messages.last.created_at
+  end
+  def notif_name
+    user.chat_rooms.last.fit.mission.senior.facility.name
+  end
+
 end
 
 

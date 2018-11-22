@@ -33,8 +33,8 @@ counter = 0
     mission = Mission.create!(start_time: Time.new(2018, 11, 18, 10, 30) , end_time: Time.new(2018, 11, 18, 13, 30), description: "Alex needs help with groceries. Student has to be patient and beautiful", senior: senior)
     mission = Mission.create!(start_time: Time.new(2018, 12, 5, 10, 30) , end_time: Time.new(2018, 12, 5, 13, 30), description: "Miryam would to walk in a park!", senior: senior)
     mission = Mission.create!(start_time: Time.new(2019, 1, 5, 10, 30) , end_time: Time.new(2019, 1, 5, 13, 30), description: "Jacqueline needs help setting up netflix !! Thanks", senior: senior)
-    mission = Mission.create!(start_time: Time.new(2019, 2, 5, 10, 30) , end_time: Time.new(2019, 2, 5, 13, 30), description: "Jacqueline needs help setting up netflix !! Thanks", senior: senior)
-    mission = Mission.create!(start_time: Time.new(2019, 3, 5, 10, 30) , end_time: Time.new(2019, 3, 5, 13, 30), description: "Jacqueline needs help setting up netflix !! Thanks", senior: senior)
+    mission = Mission.create!(start_time: Time.new(2019, 2, 5, 10, 30) , end_time: Time.new(2019, 2, 5, 13, 30), description: "Gilles needs a person to take him to see the doctor" , senior: senior)
+    mission = Mission.create!(start_time: Time.new(2019, 3, 5, 10, 30) , end_time: Time.new(2019, 3, 5, 13, 30), description: "Albert is looking for someone to play chess with him", senior: senior)
 
   end
 end

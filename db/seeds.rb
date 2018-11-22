@@ -15,17 +15,45 @@ User.delete_all
 
 puts "Done with destroy"
 photo = []
-photo.push("https://g5-assets-cld-res.cloudinary.com/image/upload/q_auto,f_auto,fl_lossy/g5/g5-c-ivr2j426-pacifica-senior-living-client/g5-cl-1ggfaylaw7-pacifica-senior-living/uploads/pacifica-senior-living-lobby.jpg")
-photo.push("https://holyokeredevelopment.com/wp-content/uploads/senior-center-538x218.png")
-photo.push("http://www.carevium.com/wp-content/uploads/2014/02/brookdale-emeritus-senior-living.jpg")
-photo.push("http://cascadebusnews.com/wp-content/uploads/2016/11/Mt-Bachelor.jpg")
-photo.push("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVPG07ZliJbPukU6nxz6P4iuTum_7kmhyRdqxszN95dj-3ukz")
+addresses = []
+names = []
+
+
+addresses.push("Boulevard Sylvain Dupuis 94 Anderlecht Bruxelles")
+names.push ("Home Forestier")
+addresses.push("Avenue des traquets 35 Auderghem")
+names.push ("Résidence Berlemont")
+addresses.push("Avenue commandant lothaire 61 Etterbeek")
+names.push ("Résidence Lothaire")
+addresses.push("Avenue Frioul 20 Evere")
+names.push ("Seniorie d'Evere")
+addresses.push("Rue Rosendael 175 Forest")
+names.push ("Le Val des Roses")
+addresses.push("Avenue A. Huysmans 73 Ixelles")
+names.push ("Résidence Huysmans")
+addresses.push(" Rue F. Volral 37 Jette")
+names.push ("Home Chartier")
+addresses.push("Avenue de Jette 2 Jette")
+names.push ("Home Simonis")
+addresses.push("Rue A. Diderich 32 Saint-gilles")
+names.push ("Home les Tilleuls")
+
+
+photo.push("https://imganuncios.mitula.net/maison_ginals_82330_une_grande_maison_de_campagne_de_7760099482615196159.jpg")
+photo.push("http://ave-maria.maisonsdefamille.com/uploads/media/standard/5464d9811c21c.jpg")
+photo.push("https://www.logement-seniors.com/uploads/medias/annonces/maisons-retraite/galeries/sources/759-maison-de-retraite-antinea-la-redorte-aude-terrasse.jpg")
+photo.push("https://www.seniorieweb.be/sites/default/files/styles/colorbox-center-images/public/nursing-home-images/main/rusthuis-mrs-charmes-en-famenne.jpg?itok=08NceZHV")
+photo.push("https://image.jimcdn.com/app/cms/image/transf/dimension=522x10000:format=jpg/path/s1f444dd0383ecf7f/image/i3b90bd562beeccfd/version/1392131775/image.jpg")
+photo.push("http://www.perwez.be/commune/autres-services/residences-pour-seniors/av-jadot-005.jpg/@@images/f17d2792-91c8-4ddc-81e2-a672a27b0438.jpeg")
+photo.push("https://www.seniorieweb.be/sites/default/files/styles/colorbox-center-images/public/nursing-home-images/main/rusthuis-lobelia.jpg?itok=-88g8EgL")
+photo.push("http://www.mdr-leclosdescedres.fr/sites/default/files/IMG_0001.JPG")
+photo.push("http://www.mdr-leclosdescedres.fr/sites/default/files/IMG_0001.JPG")
 counter = 0
-5.times do
+9.times do
   user = User.create!(email: Faker::Internet.email, password: 'topsecret', password_confirmation: 'topsecret')
-  facility = Facility.create!(address: Faker::Address.full_address, description: Faker::SiliconValley.motto, user: user, name: Faker::Company.name, photo: photo[counter], email:Faker::Internet.email )
+  facility = Facility.create!(address:addresses[counter] , description: " maison de repos neuve qui offre des prestations hôtelières et des animations. L’accueil sur mesure et les espaces de loisirs (salon, home cinéma, piano-bar, terrasses, jardin, salle de bridge, ...) font de ce lieu un must recherché.", user: user, name: names[counter], photo: photo[counter], email:Faker::Internet.email )
   counter += 1
-  5.times do
+  1.times do
     senior = Senior.create!(name: Faker::Artist.name , age: 81 , description: "Cool grandpa", facility: facility)
     mission = Mission.create!(start_time: Time.new(2018, 12, 20, 14, 30) , end_time: Time.new(2018, 12, 20, 18, 30), description: "Miryam would love to go to the cinema", senior: senior)
     mission = Mission.create!(start_time: Time.new(2018, 12, 20, 14, 30) , end_time: Time.new(2018, 12, 20, 18, 30), description: "Miryam needs help with her computer", senior: senior)

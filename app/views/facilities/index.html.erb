@@ -1,43 +1,37 @@
-
-
 <div style="display: flex;">
   <div class="container">
     <div class="row">
-        <% @facilities.each do |facility|%>
-          <% if @facility_chose.include?(facility.id) %>
-            <% chosen = true %>
+      <% @facilities.each do |facility|%>
+        <% if @facility_chose.include?(facility.id) %>
+          <% chosen = true %>
+        <% else %>
+          <% chosen = false %>
+        <% end %>
+        <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id %>" style="<% if chosen %>box-shadow: 1px 1px 10px rgba(0,0,0,0.3)<% end %>">
+        <%= link_to facility_remove_path(facility: facility.id), remote: true do %>
+          <% if facility.photo %>
+            <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url(<%= facility.photo%>);margin-top: 10px; margin-bottom: 10px;">
           <% else %>
-            <% chosen = false %>
-           <% end %>
-          <div class="col-xs-12 col-sm-4" id="facility-<%= facility.id %>" style="<% if chosen %>box-shadow: 1px 1px 10px rgba(0,0,0,0.3)<% end %>">
-            <%= link_to facility_remove_path(facility: facility.id), remote: true do %>
-
-              <% if facility.photo %>
-               <div class="card card-facility" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-              url(<%= facility.photo%>);margin-top: 10px; margin-bottom: 10px;">
-
-              <% else %>
-
-                <div class="card card-facility" data-target="facility-<%= facility.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-                 url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
-
-              <% end %>
-                <div class="card-category"><%= Facility.name %></div>
-                <div class="card-description">
-                  <p><%= facility.address %></p>
-                </div>
-              </div>
-            </div>
+            <div class="card card-facility" data-target="facility-<%= facility.id %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+            url('<%= cl_image_path facility.photo.url, height: 300, width: 400, crop: :fill %>')" >
+          <% end %>
+          <div class="card-category"><%= Facility.name %></div>
+          <div class="card-description">
+            <p><%= facility.address %></p>
+          </div>
+          </div>
         <%end%>
+        </div>
       <%end%>
     </div>
   </div>
-    <div
-      id="map"
-      style="width: 70%;
-      height: 910px;"
-      data-markers="<%= @markers.to_json %>"
-    ></div>
+  <div
+    id="map"
+    style="width: 70%;
+    height: 910px;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
 </div>
 
     <%= javascript_pack_tag "map" %>

@@ -176,18 +176,17 @@ class Student < ApplicationRecord
     sum
   end
 
-  def notif_content
-    unless fits.nil?
-    user.chat_rooms.last.fit.mission.senior.facility.user.messages.last.content
-    end
-  end
+
+
   def notif_time
-    unless fits.nil?
+     if user.chat_rooms.any?
     user.chat_rooms.last.fit.mission.senior.facility.user.messages.last.created_at
     end
   end
   def notif_name
-    unless fits.nil?
+
+     if user.chat_rooms.any?
+
     user.chat_rooms.last.fit.mission.senior.facility.name
     end
   end

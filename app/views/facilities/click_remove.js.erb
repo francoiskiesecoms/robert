@@ -1,6 +1,4 @@
 
-
-alert("You have removed this facility from your list")
 document.getElementById('facility-<%= @facility.id %>').style.boxShadow = ""
+ document.getElementById('facility-<%= @facility.id %>').innerHTML = " <%= j render 'facilities/other_card', facility: @facility %>  "
 
-document.getElementById('facility-<%= @facility.id %>').innerHTML = " <%= j render 'facilities/other_card', facility: @facility %>  "

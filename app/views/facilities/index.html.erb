@@ -2,8 +2,12 @@
   <div class="container">
     <div class="journey">
       <p> Done with your selection? Please add your availabilities</p>
-      <%= link_to "Next step !",calendar_path, class: "next-step"%>
+      <div class="flex" style ="justify-content: center">
+        <%= link_to "Update my availabilities",calendar_path, class: "next-step"%>
+        <%= link_to "Browse job offers!",dashboard_missions_path, class: "next-step"%>
+        </div>
       </div>
+
     <div class="row">
       <% @facilities.each do |facility|%>
         <% if @facility_chose.include?(facility.id) %>
@@ -28,5 +32,27 @@
     data-markers="<%= @markers.to_json %>"
   ></div>
 </div>
+
+  <button type="button" data-toggle="modal" id="modal-btn" data-target="#modal-accept" style="visibility:  hidden;"></button>
+
+<!-- modal start  -->
+
+  <div id = "modal-accept" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-body" id="MissionModal">
+        Congrats! You will now receive job offers from this facility
+      </div>
+      <div class="buttons-modal">
+        <div>
+          <%= link_to "Browse job offers", dashboard_missions_path, class: "ok_button" %>
+        </div>
+        <div>
+        <%= link_to "Update my availabilities", calendar_path, class: "ok_button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- modal end -->
 
     <%= javascript_pack_tag "map" %>

@@ -175,6 +175,7 @@ class Student < ApplicationRecord
     end
     sum
   end
+
 end
 
 

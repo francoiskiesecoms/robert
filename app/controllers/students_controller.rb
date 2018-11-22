@@ -58,8 +58,9 @@ class StudentsController < ApplicationController
     @student = Student.find_by(user_id: current_user.id)
     @student.update(student_params)
 
+
     if @student.save
-      redirect_to profile_path
+      redirect_to dashboard_path
     else
       render :profile
     end

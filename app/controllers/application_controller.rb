@@ -9,4 +9,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:is_student, :name])
   end
 
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 end

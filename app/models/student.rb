@@ -177,13 +177,19 @@ class Student < ApplicationRecord
   end
 
   def notif_content
-    user.chat_rooms.last.fit.mission.senior.facility.user.messages.last.content
+    if user.chat_rooms.any?
+    user.chat_rooms.last.fits.mission.senior.facility.user.messages.last.content
+    end
   end
   def notif_time
-    user.chat_rooms.last.fit.mission.senior.facility.user.messages.last.created_at
+     if user.chat_rooms.any?
+    user.chat_rooms.last.fits.mission.senior.facility.user.messages.last.created_at
+    end
   end
   def notif_name
-    user.chat_rooms.last.fit.mission.senior.facility.name
+     if user.chat_rooms.any?
+    user.chat_rooms.last.fits.mission.senior.facility.name
+    end
   end
 
 end

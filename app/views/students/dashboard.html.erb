@@ -63,7 +63,7 @@
     <h4>Notifications</h4>
     <p><%= @student.notif_name %></p>
     <p><%= @student.notif_content %></p>
-    <p><%= @student.notif_time.strftime('%A, %b %d') %></p>
+    <p><%= @student.notif_time.strftime('%A, %b %d') if @student.notif_time  %></p>
 
     </div>
   </div>

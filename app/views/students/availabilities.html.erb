@@ -51,7 +51,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <%= f.submit "Save changes", class: "btn btn-primary" %>
+                  <%= f.submit "Save changes", class: "btn accept-btn" %>
 
                 </div>
                 <%end%>
@@ -83,7 +83,7 @@
           <%= f.label :end_date %>
           <%= f.text_field :end_date, :data => {:provide => "datepicker"}, class: 'date-picker form-control'  %>
         </div>
-          <%= f.submit "Add availibility", class: "btn btn-primary" %>
+          <%= f.submit "Add availibility", class: "btn accept-btn" %>
       <% end %>
 
     </div>

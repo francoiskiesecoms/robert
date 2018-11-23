@@ -25,11 +25,11 @@
         </div>
         <div class="right">
           <%= link_to accept_fit_path(mission) , method: :post, remote: true do %>
-            <button type="button" class="btn btn-success" id="clickme" data-toggle="modal" data-target=".bd-example-modal-sm">Accept</button>
+            <button type="button" class="btn accept-btn" id="clickme" data-toggle="modal" data-target=".bd-example-modal-sm">Accept</button>
           <% end %>
 
           <%= link_to refuse_fit_path(mission) , method: :post, remote: true do %>
-          <button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sms">Decline</button>
+          <button type="button" class="btn decline-btn" data-toggle="modal" data-target=".bd-example-modal-sms">Decline</button>
           <% end %>
         </div>
       </div>
